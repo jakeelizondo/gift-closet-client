@@ -1,0 +1,73 @@
+@media all and (max-width: 800px) {
+  .login-section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .login-section form {
+    display: flex;
+    flex-flow: column;
+    margin-top: 30px;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .login-section form input {
+    margin: 0px 0px 10px 0px;
+    width: 95%;
+  }
+
+  .login-section textarea {
+    margin: 0px 0px 10px 0px;
+    width: 95%;
+  }
+  .login-section button {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .login-section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login-section form {
+    display: flex;
+    flex-flow: column;
+    margin-top: 30px;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 60%;
+  }
+
+  .login-section form input {
+    margin: 0px 0px 10px 0px;
+    width: 95%;
+  }
+
+  .login-section textarea {
+    margin: 0px 0px 10px 0px;
+    width: 95%;
+  }
+  .login-section button {
+    margin-top: 15px;
+    font-size: 18px;
+    max-width: 20%;
+  }
+
+  .login-form-button {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+  }
+}

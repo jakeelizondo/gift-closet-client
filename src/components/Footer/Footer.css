@@ -1,0 +1,17 @@
+@media all and (max-width: 800px) {
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+  }
+}
+
+@media all and (min-width: 800px) {
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px;
+  }
+}
