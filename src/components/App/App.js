@@ -8,7 +8,10 @@ import PublicRoute from '../utilities/PublicRoute';
 import LoginPage from '../../routes/LoginPage/LoginPage';
 import RegisterPage from '../../routes/RegisterPage/RegisterPage';
 import GiftListPage from '../../routes/GiftListPage/GiftListPage';
+import GiftDetailPage from '../../routes/GiftDetailPage/GiftDetailPage';
 import AppContext from '../../contexts/AppContext';
+import PrivateRoute from '../utilities/PrivateRoute';
+import AddGiftPage from '../../routes/AddGiftPage/AddGiftPage';
 
 class App extends React.Component {
   state = {
@@ -42,7 +45,13 @@ class App extends React.Component {
               <Route exact path={'/'} component={Homepage} />
               <PublicRoute path={'/login'} component={LoginPage} />
               <PublicRoute path={'/register'} component={RegisterPage} />
-              <Route path={'/my-gifts'} component={GiftListPage} />
+              <PrivateRoute path={'/add-gift'} component={AddGiftPage} />
+              <PrivateRoute exact path={'/my-gifts'} component={GiftListPage} />
+              <PrivateRoute
+                exact
+                path={'/my-gifts/:giftId'}
+                component={GiftDetailPage}
+              />
               <Route component={NotFoundPage} />
             </Switch>
           </main>

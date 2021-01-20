@@ -50,7 +50,7 @@ export default function Homepage() {
         </p>
       </section>
       <section className="homepage-signup">
-        <h2>Sign up today and worry less</h2>
+        <h2>Sign up today and get the gift of easy giving</h2>
         <button>Sign me up!</button>
       </section>
     </div>

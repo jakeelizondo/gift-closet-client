@@ -28,7 +28,7 @@ export default class Header extends React.Component {
         <Link to={'/my-gifts'}>
           <li>My Gifts</li>
         </Link>
-        <Link onClick={this.handleLogoutClick}>
+        <Link to={''} onClick={this.handleLogoutClick}>
           <li>Logout</li>
         </Link>
       </div>
