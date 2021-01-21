@@ -13,6 +13,7 @@ import AppContext from '../../contexts/AppContext';
 import PrivateRoute from '../utilities/PrivateRoute';
 import AddGiftPage from '../../routes/AddGiftPage/AddGiftPage';
 import EditGiftPage from '../../routes/EditGiftPage/EditGiftPage';
+import TagListPage from '../../routes/TagListPage/TagListPage';
 
 class App extends React.Component {
   state = {
@@ -26,6 +27,10 @@ class App extends React.Component {
     this.setState({ gifts });
   };
 
+  setTags = (tags) => {
+    this.setState({ tags });
+  };
+
   render() {
     return (
       <div className="App">
@@ -35,6 +40,7 @@ class App extends React.Component {
             gifts: this.state.gifts,
             tags: this.state.tags,
             setGifts: this.setGifts,
+            setTags: this.setTags,
             userLoggedIn: this.state.userLoggedIn,
           }}
         >
@@ -51,6 +57,11 @@ class App extends React.Component {
               <PrivateRoute
                 path={'/edit-gift/:giftId'}
                 component={EditGiftPage}
+              />
+              <PrivateRoute
+                exact
+                path={'/manage-tags'}
+                component={TagListPage}
               />
               <PrivateRoute
                 exact

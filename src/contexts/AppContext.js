@@ -4,6 +4,7 @@ const AppContext = React.createContext({
   gifts: [],
   tags: [],
   setGifts: () => {},
+  setTags: () => {},
 });
 
 AppContext.displayName = 'AppContext';

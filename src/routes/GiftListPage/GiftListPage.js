@@ -4,6 +4,8 @@ import GiftsApiService from '../../services/gifts-api-service';
 import { Link } from 'react-router-dom';
 import './GiftListPage.css';
 import GiftOptionsBar from '../../components/GiftOptionsBar/GiftOptionsBar';
+import TagOptionsBar from '../../components/TagOptionsBar/TagOptionsBar';
+import TagsApiService from '../../services/tags-api-service';
 
 export default class GiftListPage extends React.Component {
   static contextType = AppContext;
@@ -16,6 +18,29 @@ export default class GiftListPage extends React.Component {
       .catch((error) => {
         this.setState({ error });
       });
+
+    TagsApiService.getAllTags()
+      .then((tags) => {
+        this.context.setTags(tags);
+      })
+      .catch((error) => {
+        this.setState({ error });
+      });
+  }
+
+  getTagNameForGift(tagId) {
+    console.log(tagId);
+    //loop through tags in context, find tag by id, get name
+
+    const giftTag = this.context.tags.find((tag) => tag.id === tagId);
+    console.log(giftTag);
+    if (giftTag) {
+      return <li>{giftTag.tag_name}</li>;
+    } else {
+      return null;
+    }
+
+    //if no tag, return 'no tags for this gift yet!'
   }
 
   generateGifts = () => {
@@ -29,8 +54,9 @@ export default class GiftListPage extends React.Component {
             </Link>
           </div>
           <div>
+            <h4>Tags:</h4>
             <ul className="gift-id-tags">
-              <li>Tag name</li>
+              {this.getTagNameForGift(gift.tag_id)}
             </ul>
           </div>
         </div>
@@ -44,18 +70,7 @@ export default class GiftListPage extends React.Component {
     return (
       <React.Fragment>
         <GiftOptionsBar />
-        <section className="filter-section">
-          <div>
-            <label htmlFor="filter-tag">Filter Gifts by Tag:</label>
-            <select id="filter-tag" name="filter-tag">
-              <option value=""></option>
-              <option value="">TAG HERE</option>
-              <option value="">TAG HERE</option>
-              <option value="">TAG HERE</option>
-            </select>
-            <button>Filter</button>
-          </div>
-        </section>
+        <TagOptionsBar />
         <section className="gift-section">
           <div id="gift-list">{this.generateGifts()}</div>
         </section>
