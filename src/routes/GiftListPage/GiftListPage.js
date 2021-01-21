@@ -10,6 +10,8 @@ import TagsApiService from '../../services/tags-api-service';
 export default class GiftListPage extends React.Component {
   static contextType = AppContext;
 
+  state = { error: false, filter: false, filterTag: '' };
+
   componentDidMount() {
     GiftsApiService.getAllUserGifts()
       .then((gifts) => {
@@ -29,19 +31,63 @@ export default class GiftListPage extends React.Component {
   }
 
   getTagNameForGift(tagId) {
-    console.log(tagId);
     //loop through tags in context, find tag by id, get name
-
     const giftTag = this.context.tags.find((tag) => tag.id === tagId);
-    console.log(giftTag);
+
     if (giftTag) {
       return <li>{giftTag.tag_name}</li>;
     } else {
       return null;
     }
-
-    //if no tag, return 'no tags for this gift yet!'
   }
+
+  handleFilterClear = () => {
+    this.setState({ filter: false, filterTag: '' });
+  };
+
+  handleFilterClick = (tagId) => {
+    this.setState({ filter: true, filterTag: tagId });
+  };
+
+  generateFilteredGifts = () => {
+    //isolate tag id to filter on
+    const userSelectedTag =
+      this.context.tags.filter(
+        (tag) => tag.id === Number(this.state.filterTag)
+      )[0] || {};
+
+    // console.log('userSelectedTag', userSelectedTag);
+
+    const filteredGifts = this.context.gifts.filter((gift) => {
+      // console.log(gift);
+      // console.log(userSelectedTag);
+      return gift.tag_id === userSelectedTag.id;
+    });
+
+    console.log('filtered gifts', filteredGifts);
+
+    const userGifts = filteredGifts.map((gift) => {
+      return (
+        <div className="gift" id={gift.id} key={gift.id}>
+          <div className="gift-id-name">
+            <h3>{gift.gift_name}</h3>
+            <Link to={`/my-gifts/${gift.id}`}>
+              <button>View Details</button>
+            </Link>
+          </div>
+          <div>
+            <h4>Tags:</h4>
+            <ul className="gift-id-tags">
+              {this.getTagNameForGift(gift.tag_id)}
+            </ul>
+          </div>
+        </div>
+      );
+    });
+
+    console.log(userGifts);
+    return userGifts;
+  };
 
   generateGifts = () => {
     const userGifts = this.context.gifts.map((gift) => {
@@ -70,9 +116,20 @@ export default class GiftListPage extends React.Component {
     return (
       <React.Fragment>
         <GiftOptionsBar />
-        <TagOptionsBar />
+        <TagOptionsBar
+          handleFilterClick={this.handleFilterClick}
+          filterState={this.state.filter}
+        />
+        {this.state.filter && (
+          <div className="clear-filter">
+            <button onClick={this.handleFilterClear}>Clear Filter</button>
+          </div>
+        )}
         <section className="gift-section">
-          <div id="gift-list">{this.generateGifts()}</div>
+          <div id="gift-list">
+            {(this.state.filter && this.generateFilteredGifts()) ||
+              this.generateGifts()}
+          </div>
         </section>
       </React.Fragment>
     );

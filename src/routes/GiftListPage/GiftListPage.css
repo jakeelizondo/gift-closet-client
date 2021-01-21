@@ -20,6 +20,14 @@
     padding: 20px 20%;
   }
 
+  .clear-filter {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+
   .gift-section {
     padding: 10px;
   }

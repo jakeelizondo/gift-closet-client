@@ -3,8 +3,6 @@ import TokenService from './token-service.js';
 
 const TagsApiService = {
   getAllTags: async function () {
-    console.log('grabbing tags');
-
     try {
       const response = await fetch(`${config.API_ENDPOINT}/tags`, {
         headers: {
