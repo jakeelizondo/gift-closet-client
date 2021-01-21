@@ -12,6 +12,7 @@ import GiftDetailPage from '../../routes/GiftDetailPage/GiftDetailPage';
 import AppContext from '../../contexts/AppContext';
 import PrivateRoute from '../utilities/PrivateRoute';
 import AddGiftPage from '../../routes/AddGiftPage/AddGiftPage';
+import EditGiftPage from '../../routes/EditGiftPage/EditGiftPage';
 
 class App extends React.Component {
   state = {
@@ -47,6 +48,10 @@ class App extends React.Component {
               <PublicRoute path={'/register'} component={RegisterPage} />
               <PrivateRoute path={'/add-gift'} component={AddGiftPage} />
               <PrivateRoute exact path={'/my-gifts'} component={GiftListPage} />
+              <PrivateRoute
+                path={'/edit-gift/:giftId'}
+                component={EditGiftPage}
+              />
               <PrivateRoute
                 exact
                 path={'/my-gifts/:giftId'}

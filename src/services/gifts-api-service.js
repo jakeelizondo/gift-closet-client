@@ -56,6 +56,43 @@ const GiftsApiService = {
         )
       );
   },
+  deleteGift(id) {
+    return fetch(`${config.API_ENDPOINT}/gifts/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${TokenService.getAuthToken()}`,
+      },
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((event) => Promise.reject(event));
+        }
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  },
+  editGift(gift, id) {
+    return fetch(`${config.API_ENDPOINT}/gifts/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'content-type': 'application/json',
+        authorization: `Bearer ${TokenService.getAuthToken()}`,
+      },
+      body: JSON.stringify(gift),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((event) => Promise.reject(event));
+        } else {
+          return response.ok;
+        }
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+  },
 };
 
 export default GiftsApiService;

@@ -33,6 +33,13 @@
     padding: 0px 10px;
   }
 
+  #gift-list {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .gift-id-name {
     display: flex;
     flex-flow: row;
@@ -86,13 +93,6 @@
 
   .gift-section {
     padding: 10px;
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-  }
-
-  #gift-list {
-    width: 80%;
   }
 
   .gift {
@@ -102,6 +102,14 @@
     background-color: lightgray;
     border-radius: 10px;
     padding: 0px 10px;
+    min-width: 500px;
+  }
+
+  #gift-list {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .gift-id-name {

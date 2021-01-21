@@ -14,6 +14,9 @@
 
   .gift-section {
     padding: 10px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
   }
 
   .gift {
@@ -101,8 +104,8 @@
   .gift-section {
     padding: 10px;
     display: flex;
-    flex-flow: column;
-    align-items: center;
+    flex-flow: row;
+    justify-content: center;
   }
 
   .gift-cost {

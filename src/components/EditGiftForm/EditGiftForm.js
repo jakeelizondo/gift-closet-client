@@ -1,29 +1,47 @@
 import React from 'react';
 import GiftsApiService from '../../services/gifts-api-service';
 
-export default class AddGiftFrom extends React.Component {
+export default class EditGiftFrom extends React.Component {
   static defaultProps = {
-    onGiftPostSuccess: () => {},
+    onGiftEditSuccess: () => {},
   };
-  state = { error: false };
+  state = {
+    error: false,
+    giftName: '',
+    giftCost: '',
+    giftNotes: '',
+    giftUrl: '',
+  };
+
+  componentDidMount() {
+    GiftsApiService.getGiftById(this.props.match.params.giftId).then((gift) => {
+      this.setState({
+        giftName: gift.gift_name,
+        giftCost: gift.gift_cost,
+        giftNotes: gift.gift_description,
+        giftUrl: gift.gift_url,
+      });
+    });
+  }
 
   handleFormChange = (event) => {
     this.setState({ touched: true });
     this.setState({ [event.target.id]: event.target.value });
   };
 
-  handleFormSubmit = (event) => {
+  handleEditSubmit = (event) => {
     event.preventDefault();
-    const newGift = {
+
+    const gift = {
       gift_name: this.state.giftName,
       gift_cost: this.state.giftCost,
       gift_description: this.state.giftNotes,
       gift_url: this.state.giftUrl,
     };
-    GiftsApiService.addGift(newGift)
-      .then((gift) => {
-        if (gift) {
-          this.props.onGiftPostSuccess();
+    GiftsApiService.editGift(gift, this.props.match.params.giftId)
+      .then((response) => {
+        if (response) {
+          this.props.onGiftEditSuccess();
         } else {
           this.setState({
             error:
@@ -38,11 +56,11 @@ export default class AddGiftFrom extends React.Component {
 
   render() {
     return (
-      <form id="add-gift" onSubmit={(event) => this.handleFormSubmit(event)}>
+      <form id="edit-gift" onSubmit={(event) => this.handleEditSubmit(event)}>
         <div>
           <label htmlFor="gift-name">Gift Name:</label>
           <input
-            placeholder="Gift Name Here"
+            value={this.state.giftName}
             type="text"
             name="gift-name"
             id="giftName"
@@ -56,10 +74,10 @@ export default class AddGiftFrom extends React.Component {
         <div>
           <label htmlFor="gift-cost">Gift Cost: $</label>
           <input
-            type="number"
+            type="float"
             name="gift-cost"
             id="giftCost"
-            placeholder="34.99"
+            value={this.state.giftCost}
             onChange={(event) => this.handleFormChange(event)}
           />
         </div>
@@ -70,6 +88,7 @@ export default class AddGiftFrom extends React.Component {
             id="giftNotes"
             rows="5"
             style={{ width: '100%', maxWidth: '100%' }}
+            value={this.state.giftNotes}
             onChange={(event) => this.handleFormChange(event)}
           ></textarea>
         </div>
@@ -80,14 +99,15 @@ export default class AddGiftFrom extends React.Component {
             name="gift-url"
             id="giftUrl"
             placeholder="giftwebsite.com/awesome-gift"
+            value={this.state.giftUrl}
             onChange={(event) => this.handleFormChange(event)}
           />
         </div>
-        <div className="add-gift-add-tag">
-          <label htmlFor="add-tag-new-gift">Add tag to gift:</label>
+        <div className="edit-gift-edit-tag">
+          <label htmlFor="edit-tag-gift">Add/change gift tag:</label>
           <select
             id="giftTag"
-            name="add-tag-new-gift"
+            name="edit-tag-new-gift"
             onChange={(event) => this.handleFormChange(event)}
           >
             <option value=""></option>
@@ -101,7 +121,7 @@ export default class AddGiftFrom extends React.Component {
           type="submit-new-gift"
           disabled={!this.state.giftName || this.state.giftName === ''}
         >
-          Add Gift
+          Edit Gift
         </button>
       </form>
     );

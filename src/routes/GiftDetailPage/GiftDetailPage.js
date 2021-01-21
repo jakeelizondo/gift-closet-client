@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import GiftOptionsBar from '../../components/GiftOptionsBar/GiftOptionsBar';
 import GiftsApiService from '../../services/gifts-api-service';
 import './GiftDetailPage.css';
@@ -13,6 +14,12 @@ export default class GiftDetailPage extends React.Component {
       }
     );
   }
+
+  handleGiftDelete = () => {
+    GiftsApiService.deleteGift(this.props.match.params.giftId).then((res) => {
+      this.props.history.goBack();
+    });
+  };
 
   generateGift() {
     const gift = this.state.gift;
@@ -49,8 +56,10 @@ export default class GiftDetailPage extends React.Component {
             </ul>
           </div>
           <div className="gift-buttons">
-            <button>Edit Gift</button>
-            <button>Delete Gift</button>
+            <Link to={`/edit-gift/${gift.id}`}>
+              <button>Edit Gift</button>
+            </Link>
+            <button onClick={this.handleGiftDelete}>Delete Gift</button>
           </div>
         </div>
       </section>
