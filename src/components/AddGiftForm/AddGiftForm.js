@@ -56,7 +56,7 @@ export default class AddGiftFrom extends React.Component {
         <div>
           <label htmlFor="gift-cost">Gift Cost: $</label>
           <input
-            type="number"
+            type="float"
             name="gift-cost"
             id="giftCost"
             placeholder="34.99"
