@@ -2,17 +2,26 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GiftOptionsBar from '../../components/GiftOptionsBar/GiftOptionsBar';
 import GiftsApiService from '../../services/gifts-api-service';
+import TagsApiService from '../../services/tags-api-service';
 import './GiftDetailPage.css';
 
 export default class GiftDetailPage extends React.Component {
   state = { error: false };
 
   componentDidMount() {
-    GiftsApiService.getGiftById(this.props.match.params.giftId).then(
-      (response) => {
+    GiftsApiService.getGiftById(this.props.match.params.giftId)
+      .then((response) => {
         this.setState({ gift: response });
-      }
-    );
+      })
+      .then(() => {
+        TagsApiService.getTagById(this.state.gift.tag_id).then((tag) => {
+          if (tag.tag_name !== '') {
+            this.setState({ tag });
+          } else {
+            this.setState({ tag: null });
+          }
+        });
+      });
   }
 
   handleGiftDelete = () => {
@@ -23,6 +32,7 @@ export default class GiftDetailPage extends React.Component {
 
   generateGift() {
     const gift = this.state.gift;
+    const tag = this.state.tag || null;
     return (
       <section className="gift-section">
         <div className="gift">
@@ -52,7 +62,7 @@ export default class GiftDetailPage extends React.Component {
           <div>
             <h3>Tag:</h3>
             <ul className="gift-id-tags">
-              <li>Tag name</li>
+              {tag ? <li>{tag.tag_name}</li> : <p>No tags yet!</p>}
             </ul>
           </div>
           <div className="gift-buttons">

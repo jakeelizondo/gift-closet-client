@@ -1,16 +1,20 @@
 import React from 'react';
+import AppContext from '../../contexts/AppContext';
 import GiftsApiService from '../../services/gifts-api-service';
+import TagsApiService from '../../services/tags-api-service';
 
 export default class EditGiftFrom extends React.Component {
   static defaultProps = {
     onGiftEditSuccess: () => {},
   };
+  static contextType = AppContext;
   state = {
     error: false,
     giftName: '',
     giftCost: '',
     giftNotes: '',
     giftUrl: '',
+    giftTag: '',
   };
 
   componentDidMount() {
@@ -20,9 +24,24 @@ export default class EditGiftFrom extends React.Component {
         giftCost: gift.gift_cost,
         giftNotes: gift.gift_description,
         giftUrl: gift.gift_url,
+        giftTag: gift.tag_id,
       });
     });
+    TagsApiService.getAllTags().then((tags) => {
+      this.context.setTags(tags);
+    });
   }
+
+  generateTagOptions = () => {
+    const tagOptions = this.context.tags.map((tag) => {
+      return (
+        <option value={tag.id} key={tag.id}>
+          {tag.tag_name}
+        </option>
+      );
+    });
+    return tagOptions;
+  };
 
   handleFormChange = (event) => {
     this.setState({ touched: true });
@@ -37,6 +56,7 @@ export default class EditGiftFrom extends React.Component {
       gift_cost: this.state.giftCost,
       gift_description: this.state.giftNotes,
       gift_url: this.state.giftUrl,
+      tag_id: this.state.giftTag,
     };
     GiftsApiService.editGift(gift, this.props.match.params.giftId)
       .then((response) => {
@@ -110,10 +130,8 @@ export default class EditGiftFrom extends React.Component {
             name="edit-tag-new-gift"
             onChange={(event) => this.handleFormChange(event)}
           >
-            <option value=""></option>
-            <option value="1">GIFT TAG HERE</option>
-            <option value="2">GIFT TAG HERE</option>
-            <option value="3">GIFT TAG HERE</option>
+            <option value="">No change</option>
+            {this.generateTagOptions()}
           </select>
         </div>
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
@@ -121,7 +139,7 @@ export default class EditGiftFrom extends React.Component {
           type="submit-new-gift"
           disabled={!this.state.giftName || this.state.giftName === ''}
         >
-          Edit Gift
+          Submit
         </button>
       </form>
     );

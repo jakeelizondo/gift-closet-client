@@ -20,6 +20,24 @@ const TagsApiService = {
     }
   },
 
+  getTagById: async function (id) {
+    try {
+      const response = await fetch(`${config.API_ENDPOINT}/tags/${id}`, {
+        headers: {
+          'content-type': 'application/json',
+          Authorization: `Bearer ${TokenService.getAuthToken()}`,
+        },
+      });
+      if (!response.ok) {
+        return response.json().then((event) => Promise.reject(event));
+      } else {
+        return response.json();
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  },
+
   addTag: async function (tag) {
     try {
       const response = await fetch(`${config.API_ENDPOINT}/tags`, {

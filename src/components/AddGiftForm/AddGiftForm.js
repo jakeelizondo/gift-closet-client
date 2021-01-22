@@ -1,11 +1,26 @@
 import React from 'react';
+import AppContext from '../../contexts/AppContext';
 import GiftsApiService from '../../services/gifts-api-service';
 
 export default class AddGiftFrom extends React.Component {
   static defaultProps = {
     onGiftPostSuccess: () => {},
   };
+
+  static contextType = AppContext;
+
   state = { error: false };
+
+  generateTagOptions = () => {
+    const tagOptions = this.context.tags.map((tag) => {
+      return (
+        <option value={tag.id} key={tag.id}>
+          {tag.tag_name}
+        </option>
+      );
+    });
+    return tagOptions;
+  };
 
   handleFormChange = (event) => {
     this.setState({ touched: true });
@@ -19,6 +34,7 @@ export default class AddGiftFrom extends React.Component {
       gift_cost: this.state.giftCost,
       gift_description: this.state.giftNotes,
       gift_url: this.state.giftUrl,
+      tag_id: this.state.giftTag,
     };
     GiftsApiService.addGift(newGift)
       .then((gift) => {
@@ -91,9 +107,7 @@ export default class AddGiftFrom extends React.Component {
             onChange={(event) => this.handleFormChange(event)}
           >
             <option value=""></option>
-            <option value="1">GIFT TAG HERE</option>
-            <option value="2">GIFT TAG HERE</option>
-            <option value="3">GIFT TAG HERE</option>
+            {this.generateTagOptions()}
           </select>
         </div>
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}

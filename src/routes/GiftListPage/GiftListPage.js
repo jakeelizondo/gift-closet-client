@@ -76,7 +76,7 @@ export default class GiftListPage extends React.Component {
             </Link>
           </div>
           <div>
-            <h4>Tags:</h4>
+            <h4>Tag:</h4>
             <ul className="gift-id-tags">
               {this.getTagNameForGift(gift.tag_id)}
             </ul>
@@ -100,7 +100,7 @@ export default class GiftListPage extends React.Component {
             </Link>
           </div>
           <div>
-            <h4>Tags:</h4>
+            <h4>Tag:</h4>
             <ul className="gift-id-tags">
               {this.getTagNameForGift(gift.tag_id)}
             </ul>

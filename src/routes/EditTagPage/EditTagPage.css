@@ -1,0 +1,83 @@
+@media all and (max-width: 800px) {
+  .back-button-bar {
+    display: flex;
+    flex-flow: row;
+    margin: 10px 0px 0px 10px;
+  }
+
+  .edit-tag-section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .edit-tag-section form {
+    display: flex;
+    flex-flow: column;
+    margin-top: 30px;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .edit-tag-section form input {
+    margin: 0px 0px 10px 0px;
+    width: 95%;
+  }
+
+  .edit-tag-section textarea {
+    margin: 0px 0px 10px 0px;
+    width: 95%;
+  }
+  .edit-tag-section button {
+    margin-top: 15px;
+    font-size: 18px;
+  }
+}
+
+@media all and (min-width: 800px) {
+  .back-button-bar {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px 0px 0px;
+  }
+
+  .back-button-bar button {
+    min-width: 60px;
+  }
+
+  .edit-tag-section {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .edit-tag-section form {
+    display: flex;
+    flex-flow: column;
+    margin-top: 30px;
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    min-width: 60%;
+  }
+
+  .edit-tag-section form input {
+    margin: 0px 0px 10px 0px;
+    width: 95%;
+  }
+
+  .edit-tag-section textarea {
+    margin: 0px 0px 10px 0px;
+    width: 95%;
+  }
+  .edit-tag-section button {
+    margin-top: 15px;
+    font-size: 18px;
+    max-width: 20%;
+  }
+}
