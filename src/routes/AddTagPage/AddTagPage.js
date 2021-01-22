@@ -4,7 +4,7 @@ import './AddTagPage.css';
 
 export default class AddTagPage extends React.Component {
   onTagPostSuccess = () => {
-    this.props.history.push('/my-gifts');
+    this.props.history.goBack();
   };
   render() {
     return (
