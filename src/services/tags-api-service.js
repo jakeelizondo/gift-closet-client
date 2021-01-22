@@ -19,6 +19,26 @@ const TagsApiService = {
       alert(error.message);
     }
   },
+
+  addTag: async function (tag) {
+    try {
+      const response = await fetch(`${config.API_ENDPOINT}/tags`, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          Authorization: `Bearer ${TokenService.getAuthToken()}`,
+        },
+        body: JSON.stringify(tag),
+      });
+      if (!response.ok) {
+        return response.json().then((event) => Promise.reject(event));
+      } else {
+        return response.json();
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  },
 };
 
 export default TagsApiService;

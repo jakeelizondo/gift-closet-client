@@ -14,6 +14,7 @@ import PrivateRoute from '../utilities/PrivateRoute';
 import AddGiftPage from '../../routes/AddGiftPage/AddGiftPage';
 import EditGiftPage from '../../routes/EditGiftPage/EditGiftPage';
 import TagListPage from '../../routes/TagListPage/TagListPage';
+import AddTagPage from '../../routes/AddTagPage/AddTagPage';
 
 class App extends React.Component {
   state = {
@@ -53,6 +54,7 @@ class App extends React.Component {
               <PublicRoute path={'/login'} component={LoginPage} />
               <PublicRoute path={'/register'} component={RegisterPage} />
               <PrivateRoute path={'/add-gift'} component={AddGiftPage} />
+              <PrivateRoute path={'/add-tag'} component={AddTagPage} />
               <PrivateRoute exact path={'/my-gifts'} component={GiftListPage} />
               <PrivateRoute
                 path={'/edit-gift/:giftId'}

@@ -7,7 +7,9 @@ export default function GiftOptionsBar() {
       <Link to={'/add-gift'}>
         <button id="add-new-gift">Add New Gift</button>
       </Link>
-      <button id="add-new-tag">Add New Tag</button>
+      <Link to={'/add-tag'}>
+        <button id="add-new-tag">Add New Tag</button>
+      </Link>
     </section>
   );
 }
