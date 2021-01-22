@@ -13,6 +13,7 @@ import AppContext from '../../contexts/AppContext';
 import PrivateRoute from '../utilities/PrivateRoute';
 import AddGiftPage from '../../routes/AddGiftPage/AddGiftPage';
 import EditGiftPage from '../../routes/EditGiftPage/EditGiftPage';
+import EditTagPage from '../../routes/EditTagPage/EditTagPage';
 import TagListPage from '../../routes/TagListPage/TagListPage';
 import AddTagPage from '../../routes/AddTagPage/AddTagPage';
 
@@ -60,6 +61,7 @@ class App extends React.Component {
                 path={'/edit-gift/:giftId'}
                 component={EditGiftPage}
               />
+              <PrivateRoute path={'/edit-tag/:tagId'} component={EditTagPage} />
               <PrivateRoute
                 exact
                 path={'/manage-tags'}
