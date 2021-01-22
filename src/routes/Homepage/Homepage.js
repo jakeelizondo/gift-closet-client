@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Homepage.css';
 
 export default function Homepage() {
@@ -51,7 +52,9 @@ export default function Homepage() {
       </section>
       <section className="homepage-signup">
         <h2>Sign up today and get the gift of easy giving</h2>
-        <button>Sign me up!</button>
+        <Link to={'/register'}>
+          <button>Sign me up!</button>
+        </Link>
       </section>
     </div>
   );
