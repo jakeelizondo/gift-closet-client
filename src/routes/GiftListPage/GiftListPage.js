@@ -126,6 +126,9 @@ export default class GiftListPage extends React.Component {
           </div>
         )}
         <section className="gift-section">
+          {this.context.gifts.length < 1 && (
+            <p>Looks like you need to add some gifts!</p>
+          )}
           <div id="gift-list">
             {(this.state.filter && this.generateFilteredGifts()) ||
               this.generateGifts()}

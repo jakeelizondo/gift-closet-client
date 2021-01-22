@@ -48,6 +48,9 @@ export default class TagsListPage extends React.Component {
       <React.Fragment>
         <GiftOptionsBar />
         <button onClick={this.props.history.goBack}>Back</button>
+        {this.context.tags.length < 1 && (
+          <p>Looks like you need to add some tags!</p>
+        )}
         <section className="tag-section">
           <div id="tag-list">{this.generateTags()}</div>
         </section>
