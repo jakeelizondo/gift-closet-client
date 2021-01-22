@@ -39,6 +39,23 @@ const TagsApiService = {
       alert(error.message);
     }
   },
+
+  deleteTag: async function (id) {
+    try {
+      const response = await fetch(`${config.API_ENDPOINT}/tags/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'content-type': 'application/json',
+          Authorization: `Bearer ${TokenService.getAuthToken()}`,
+        },
+      });
+      if (!response.ok) {
+        return response.json().then((event) => Promise.reject(event));
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+  },
 };
 
 export default TagsApiService;

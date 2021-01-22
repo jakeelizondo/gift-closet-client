@@ -13,6 +13,14 @@ export default class TagsListPage extends React.Component {
     });
   }
 
+  handleDeleteTag = (e) => {
+    e.preventDefault();
+    const tagId = e.target.id;
+    TagsApiService.deleteTag(tagId).then((response) => {
+      this.props.history.go('/manage-tags');
+    });
+  };
+
   generateTags = () => {
     const userTags = this.context.tags.map((tag) => {
       return (
@@ -24,7 +32,9 @@ export default class TagsListPage extends React.Component {
             <Link to={`/edit-tag/${tag.id}`}>
               <button>Edit Tag</button>
             </Link>
-            <button>Delete Tag</button>
+            <button id={tag.id} onClick={(e) => this.handleDeleteTag(e)}>
+              Delete Tag
+            </button>
           </div>
         </div>
       );
