@@ -45,7 +45,7 @@ export default class LoginForm extends React.Component {
         <div>
           <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             name="password"
             id="password"
             placeholder="password"
