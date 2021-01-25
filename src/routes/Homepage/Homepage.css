@@ -1,5 +1,5 @@
 @media all and (max-width: 800px) {
-  .hero-1 {
+  .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,7 +9,7 @@
     margin-bottom: 30px;
   }
 
-  .hero-1 img {
+  .hero img {
     display: block;
     margin-top: 10px;
     margin-right: 10px;
@@ -19,73 +19,13 @@
     height: 50px;
   }
 
-  .hero-1 div {
+  .hero div {
     display: flex;
     flex-flow: row;
     align-items: center;
   }
 
-  .hero-1 p {
-    flex: 2;
-  }
-
-  .hero-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px 15px;
-    margin-bottom: 30px;
-  }
-
-  .hero-2 img {
-    display: block;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    flex: 1;
-    max-width: 50px;
-    height: 50px;
-  }
-
-  .hero-2 div {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-  }
-
-  .hero-2 p {
-    flex: 2;
-  }
-
-  .hero-3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px 15px;
-    margin-bottom: 30px;
-  }
-
-  .hero-3 img {
-    display: block;
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 20px;
-    flex: 1;
-    max-width: 50px;
-    height: 50px;
-  }
-
-  .hero-3 div {
-    display: flex;
-    flex-flow: row;
-    align-items: center;
-  }
-
-  .hero-3 p {
+  .hero p {
     flex: 2;
   }
 
@@ -129,13 +69,13 @@
     max-width: 70%;
   }
 
-  div p {
+  .hero p {
     flex: 2;
     font-size: 25px;
     max-width: 50%;
   }
 
-  section div img {
+  .hero div img {
     display: block;
     margin-top: 10px;
     margin-right: 10px;
@@ -145,7 +85,7 @@
     height: auto;
   }
 
-  .hero-1 {
+  .hero {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,31 +95,11 @@
     margin-bottom: 30px;
   }
 
-  section div {
+  .hero div {
     display: flex;
     flex-flow: row;
     align-items: center;
     justify-content: space-evenly;
-  }
-
-  .hero-2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px 15px;
-    margin-bottom: 30px;
-  }
-
-  .hero-3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0px 15px;
-    margin-bottom: 30px;
   }
 
   .homepage-signup {

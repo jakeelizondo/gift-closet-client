@@ -8,7 +8,7 @@ import giftListIcon from '../../images/014-list.png';
 export default function Homepage() {
   return (
     <div className="homepage">
-      <section className="hero-1">
+      <section className="hero">
         <h2>Gift. Better.</h2>
         <div>
           <img src={giftMemoryIcon} alt={'gift-memory-icon'} />
@@ -20,7 +20,7 @@ export default function Homepage() {
           </p>
         </div>
       </section>
-      <section className="hero-2">
+      <section className="hero">
         <h2>Tag your gifts for easy access</h2>
         <div>
           <p>
@@ -31,7 +31,7 @@ export default function Homepage() {
           <img src={giftTagIcon} alt={'gift-tag-icon'} />
         </div>
       </section>
-      <section className="hero-3">
+      <section className="hero">
         <h2>Manage your tags and gifts throughout the year</h2>
         <div>
           <img src={giftListIcon} alt={'gift-tag-icon'} />
