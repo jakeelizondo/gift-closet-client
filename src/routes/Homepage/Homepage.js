@@ -8,41 +8,46 @@ import giftListIcon from '../../images/014-list.png';
 export default function Homepage() {
   return (
     <div className="homepage">
-      <section className="hero">
-        <h2>Gift. Better.</h2>
+      <section className="hero white-background">
+        <h2>Gift. Smarter!</h2>
         <div>
           <img src={giftMemoryIcon} alt={'gift-memory-icon'} />
           <p>
-            Always forgetting gift ideas for friends or loved ones? Not anymore.
+            Always forgetting gift ideas for friends or loved ones? Not anymore!
             With Gift Closet you can save gift ideas throughout the year so that
-            when holidays or events roll around you'll have a list of gift ideas
-            to choose from.
+            when holidays or events roll around you'll have a list of options in
+            your virtual gift closet!
           </p>
         </div>
       </section>
-      <section className="hero">
+      <section className="hero" style={{ 'background-color': '#f941443b' }}>
         <h2>Tag your gifts for easy access</h2>
         <div>
           <p>
-            Tag your gifts by individual, event, holiday, anything! Later,
-            filter your gifts by tag to see only the gift ideas you need for the
-            occasion.
+            Organize your gifts by person, event, holiday, you pick! Later,
+            filter your gifts by your custom tags to see only the gift ideas you
+            need for the occasion.
           </p>
           <img src={giftTagIcon} alt={'gift-tag-icon'} />
         </div>
       </section>
-      <section className="hero">
-        <h2>Manage your tags and gifts throughout the year</h2>
+      <section className="hero white-background">
+        <h2>Manage your gift lists throughout the year</h2>
         <div>
           <img src={giftListIcon} alt={'gift-tag-icon'} />
           <p>
-            Add, edit, and delete your gifts and personal tags as you need to.
+            Create, update, or delete gifts and personal tags as often as you'd
+            like to keep your lists up to date. Add website links, price info,
+            notes on preferences and more!
           </p>
         </div>
       </section>
-      <section className="homepage-signup">
+      <section
+        className="homepage-signup"
+        style={{ backgroundColor: '#f941443b' }}
+      >
         <div>
-          <h2>Sign up today and get the gift of easy giving</h2>
+          <h2>Sign up today and enjoy the gift of easy giving!</h2>
           <Link to={'/register'}>
             <button>Sign me up!</button>
           </Link>
