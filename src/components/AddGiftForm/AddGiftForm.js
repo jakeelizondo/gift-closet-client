@@ -53,6 +53,7 @@ export default class AddGiftFrom extends React.Component {
   };
 
   render() {
+    console.log(this.state);
     return (
       <form id="add-gift" onSubmit={(event) => this.handleFormSubmit(event)}>
         <div>

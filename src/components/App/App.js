@@ -16,6 +16,7 @@ import EditGiftPage from '../../routes/EditGiftPage/EditGiftPage';
 import EditTagPage from '../../routes/EditTagPage/EditTagPage';
 import TagListPage from '../../routes/TagListPage/TagListPage';
 import AddTagPage from '../../routes/AddTagPage/AddTagPage';
+import ErrorBoundary from '../../routes/ErrorBoundary/ErrorBoundary';
 
 class App extends React.Component {
   state = {
@@ -37,45 +38,54 @@ class App extends React.Component {
     return (
       <div className="App">
         <Route path="/" component={Header} />
-        <AppContext.Provider
-          value={{
-            gifts: this.state.gifts,
-            tags: this.state.tags,
-            setGifts: this.setGifts,
-            setTags: this.setTags,
-            userLoggedIn: this.state.userLoggedIn,
-          }}
-        >
-          <main className="App">
-            {this.state.hasError && (
-              <p> Oops, looks like there was an error!</p>
-            )}
-            <Switch>
-              <Route exact path={'/'} component={Homepage} />
-              <PublicRoute path={'/login'} component={LoginPage} />
-              <PublicRoute path={'/register'} component={RegisterPage} />
-              <PrivateRoute path={'/add-gift'} component={AddGiftPage} />
-              <PrivateRoute path={'/add-tag'} component={AddTagPage} />
-              <PrivateRoute exact path={'/my-gifts'} component={GiftListPage} />
-              <PrivateRoute
-                path={'/edit-gift/:giftId'}
-                component={EditGiftPage}
-              />
-              <PrivateRoute path={'/edit-tag/:tagId'} component={EditTagPage} />
-              <PrivateRoute
-                exact
-                path={'/manage-tags'}
-                component={TagListPage}
-              />
-              <PrivateRoute
-                exact
-                path={'/my-gifts/:giftId'}
-                component={GiftDetailPage}
-              />
-              <Route component={NotFoundPage} />
-            </Switch>
-          </main>
-        </AppContext.Provider>
+        <ErrorBoundary>
+          <AppContext.Provider
+            value={{
+              gifts: this.state.gifts,
+              tags: this.state.tags,
+              setGifts: this.setGifts,
+              setTags: this.setTags,
+              userLoggedIn: this.state.userLoggedIn,
+            }}
+          >
+            <main className="App">
+              {this.state.hasError && (
+                <p> Oops, looks like there was an error!</p>
+              )}
+              <Switch>
+                <Route exact path={'/'} component={Homepage} />
+                <PublicRoute path={'/login'} component={LoginPage} />
+                <PublicRoute path={'/register'} component={RegisterPage} />
+                <PrivateRoute path={'/add-gift'} component={AddGiftPage} />
+                <PrivateRoute path={'/add-tag'} component={AddTagPage} />
+                <PrivateRoute
+                  exact
+                  path={'/my-gifts'}
+                  component={GiftListPage}
+                />
+                <PrivateRoute
+                  path={'/edit-gift/:giftId'}
+                  component={EditGiftPage}
+                />
+                <PrivateRoute
+                  path={'/edit-tag/:tagId'}
+                  component={EditTagPage}
+                />
+                <PrivateRoute
+                  exact
+                  path={'/manage-tags'}
+                  component={TagListPage}
+                />
+                <PrivateRoute
+                  exact
+                  path={'/my-gifts/:giftId'}
+                  component={GiftDetailPage}
+                />
+                <Route component={NotFoundPage} />
+              </Switch>
+            </main>
+          </AppContext.Provider>
+        </ErrorBoundary>
         <Footer />
       </div>
     );

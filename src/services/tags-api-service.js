@@ -15,8 +15,8 @@ const TagsApiService = {
       } else {
         return response.json();
       }
-    } catch (error) {
-      alert(error.message);
+    } catch (e) {
+      console.error(e);
     }
   },
 

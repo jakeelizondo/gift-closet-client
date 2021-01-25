@@ -23,15 +23,15 @@ export default class LoginForm extends React.Component {
         this.props.handleGoodLogin();
       })
       .catch((response) => {
-        this.setState({ error: response.error });
+        this.setState({ error: response.error.message });
       });
   };
 
   render() {
-    const { error } = this.state;
     return (
       <form className="login-form" onSubmit={this.handleSignIn}>
-        <div>{error && <p>{error}</p>}</div>
+        {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
+
         <div>
           <label htmlFor="username">Username</label>
           <input

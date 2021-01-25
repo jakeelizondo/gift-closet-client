@@ -8,15 +8,13 @@ const AuthApiService = {
         'content-type': 'application/json',
       },
       body: JSON.stringify(loginCredentials),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          return response.json().then((event) => Promise.reject(event));
-        } else {
-          return response.json();
-        }
-      })
-      .catch(() => alert('Oops! Something went wrong'));
+    }).then((response) => {
+      if (!response.ok) {
+        return response.json().then((event) => Promise.reject(event));
+      } else {
+        return response.json();
+      }
+    });
   },
   postUser(user) {
     return fetch(`${config.API_ENDPOINT}/users`, {

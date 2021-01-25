@@ -52,7 +52,13 @@ export default class RegisterForm extends React.Component {
           <input type="text" name="username" id="username" required />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">
+            Password <br />
+            <span className="tiny-text">
+              (must contain at least 1 uppercase, 1 lowercase, 1 number, and 1
+              special character)
+            </span>
+          </label>
           <input type="text" name="password" id="password" required />
         </div>
 
