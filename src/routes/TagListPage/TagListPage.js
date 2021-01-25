@@ -47,7 +47,9 @@ export default class TagsListPage extends React.Component {
     return (
       <React.Fragment>
         <GiftOptionsBar />
-        <button onClick={this.props.history.goBack}>Back</button>
+        <button className="back-button" onClick={this.props.history.goBack}>
+          Back
+        </button>
         {this.context.tags.length < 1 && (
           <p>Looks like you need to add some tags!</p>
         )}

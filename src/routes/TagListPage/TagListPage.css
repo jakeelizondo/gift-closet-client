@@ -1,4 +1,15 @@
 @media all and (max-width: 800px) {
+  .back-button {
+    margin: 10px 10px 0px 10px;
+    font-size: 12px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+  }
+
   .tag-section {
     padding: 10px;
   }
@@ -6,10 +17,13 @@
   .tag {
     display: flex;
     flex-flow: column;
-    margin: 20px 0px;
-    background-color: lightgray;
+    margin: 10px 0px;
+    background-color: white;
     border-radius: 10px;
-    padding: 0px 10px 10px 10px;
+    padding: 15px;
+    width: 80%;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
   #tag-list {
@@ -21,20 +35,20 @@
 
   .tag-buttons {
     display: flex;
-    flex-flow: column;
-    justify-content: center;
+    flex-flow: row;
+    justify-content: space-evenly;
     align-items: center;
+    padding: 10px 0px;
   }
 
   .tag-buttons button {
-    margin: 5px;
-  }
-
-  .tag-id-name {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-items: center;
+    font-size: 12px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
   }
 
   .tag-id-tags {
@@ -42,21 +56,21 @@
     padding-left: 0px;
     flex-flow: row wrap;
     justify-content: space-evenly;
-  }
-
-  .tag ul {
-    list-style-type: none;
-  }
-
-  .tag li {
-    background-color: lightblue;
-    border-radius: 10px;
-    padding: 5px 10px;
-    margin-top: 5px;
   }
 }
 
 @media all and (min-width: 800px) {
+  .back-button {
+    margin: 20px 20px 0px 20px;
+    font-size: 20px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+  }
+
   .tag-section {
     padding: 10px;
   }
@@ -64,11 +78,13 @@
   .tag {
     display: flex;
     flex-flow: column;
-    margin: 20px 0px;
-    background-color: lightgray;
+    margin: 10px 0px;
+    background-color: white;
     border-radius: 10px;
-    padding: 0px 10px;
-    min-width: 500px;
+    padding: 15px;
+    width: 40%;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
   #tag-list {
@@ -83,17 +99,21 @@
     flex-flow: row;
     justify-content: space-evenly;
     align-items: center;
+    padding: 10px 0px;
   }
 
   .tag-buttons button {
-    margin: 5px;
+    font-size: 18px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
   }
 
-  .tag-id-name {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    align-items: center;
+  .tag h3 {
+    font-size: 25px;
   }
 
   .tag-id-tags {
@@ -101,16 +121,5 @@
     padding-left: 0px;
     flex-flow: row wrap;
     justify-content: space-evenly;
-  }
-
-  .tag ul {
-    list-style-type: none;
-  }
-
-  .tag li {
-    background-color: lightblue;
-    border-radius: 10px;
-    padding: 5px 10px;
-    margin-top: 5px;
   }
 }
