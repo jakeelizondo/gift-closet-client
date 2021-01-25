@@ -6,6 +6,7 @@ import './GiftListPage.css';
 import GiftOptionsBar from '../../components/GiftOptionsBar/GiftOptionsBar';
 import TagOptionsBar from '../../components/TagOptionsBar/TagOptionsBar';
 import TagsApiService from '../../services/tags-api-service';
+import giftTagIcon from '../../images/012-bookmark.png';
 
 export default class GiftListPage extends React.Component {
   static contextType = AppContext;
@@ -35,7 +36,12 @@ export default class GiftListPage extends React.Component {
     const giftTag = this.context.tags.find((tag) => tag.id === tagId);
 
     if (giftTag) {
-      return <li>{giftTag.tag_name}</li>;
+      return (
+        <li onClick={() => this.handleFilterClick(tagId)}>
+          <img src={giftTagIcon} alt={'gift-tag-icon'} />
+          <span>{giftTag.tag_name}</span>
+        </li>
+      );
     } else {
       return null;
     }
@@ -72,7 +78,7 @@ export default class GiftListPage extends React.Component {
           <div className="gift-id-name">
             <h3>{gift.gift_name}</h3>
             <Link to={`/my-gifts/${gift.id}`}>
-              <button>View Details</button>
+              <button>Details</button>
             </Link>
           </div>
           <div>
@@ -96,7 +102,7 @@ export default class GiftListPage extends React.Component {
           <div className="gift-id-name">
             <h3>{gift.gift_name}</h3>
             <Link to={`/my-gifts/${gift.id}`}>
-              <button>View Details</button>
+              <button>Details</button>
             </Link>
           </div>
           <div>

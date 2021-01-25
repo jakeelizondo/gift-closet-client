@@ -34,20 +34,20 @@ export default class GiftDetailPage extends React.Component {
     const gift = this.state.gift;
     const tag = this.state.tag || null;
     return (
-      <section className="gift-section">
+      <section className="detail-gift-section">
         <div className="gift">
-          <div className="gift-id-name">
+          <div className="detail-gift-id-name">
             <h3>{gift.gift_name}</h3>
           </div>
-          <div className="gift-details">
+          <div className="detail-gift-details">
             {gift.gift_cost && (
-              <div className="gift-cost">
+              <div className="detail-gift-cost">
                 <h3>Cost:</h3>
                 <p>${gift.gift_cost}</p>
               </div>
             )}
             {gift.gift_url && (
-              <div className="gift-url">
+              <div className="detail-gift-url">
                 <h3>URL:</h3>
                 <p>{gift.gift_url}</p>
               </div>
@@ -61,11 +61,11 @@ export default class GiftDetailPage extends React.Component {
           </div>
           <div>
             <h3>Tag:</h3>
-            <ul className="gift-id-tags">
+            <ul className="detail-gift-id-tags">
               {tag ? <li>{tag.tag_name}</li> : <p>No tags yet!</p>}
             </ul>
           </div>
-          <div className="gift-buttons">
+          <div className="detail-gift-buttons">
             <Link to={`/edit-gift/${gift.id}`}>
               <button>Edit Gift</button>
             </Link>

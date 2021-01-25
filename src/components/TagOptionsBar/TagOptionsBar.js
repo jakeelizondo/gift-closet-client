@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import AppContext from '../../contexts/AppContext';
+import './TagOptionsBar.css';
 
 export default class TagOptionsBar extends React.Component {
   static contextType = AppContext;
@@ -25,26 +25,28 @@ export default class TagOptionsBar extends React.Component {
     return (
       <section className="filter-section">
         <div>
-          <label htmlFor="filter-tag">Filter Gifts by Tag:</label>
-          <select
-            id="filter-tag"
-            name="filter-tag"
-            onChange={(e) => this.handleChange(e)}
-          >
-            <option value="">Choose a tag</option>
-            {this.generateOptions()}
-          </select>
+          <div>
+            <label htmlFor="filter-tag" className="large-font">
+              Filter by Tag:
+            </label>
+            <select
+              id="filter-tag"
+              name="filter-tag"
+              className="large-font"
+              onChange={(e) => this.handleChange(e)}
+            >
+              <option value="">Choose a tag</option>
+              {this.generateOptions()}
+            </select>
+          </div>
+
           <button
             disabled={this.state.filter === ''}
+            className="large-font"
             onClick={() => this.props.handleFilterClick(this.state.filter)}
           >
             Filter
           </button>
-        </div>
-        <div>
-          <Link to={'/manage-tags'}>
-            <button>Manage Tags</button>
-          </Link>
         </div>
       </section>
     );

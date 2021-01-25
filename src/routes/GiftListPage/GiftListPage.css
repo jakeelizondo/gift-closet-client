@@ -1,21 +1,4 @@
 @media all and (max-width: 800px) {
-  .add-new-buttons {
-    background-color: rgb(235, 235, 235);
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 15px 0px;
-  }
-
-  .filter-section {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    background-color: lightgray;
-    padding: 20px 20%;
-  }
-
   .clear-filter {
     display: flex;
     flex-flow: row;
@@ -24,6 +7,16 @@
     padding-top: 10px;
   }
 
+  .clear-filter button {
+    font-size: 15px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+  }
+
   .gift-section {
     padding: 10px;
   }
@@ -32,9 +25,12 @@
     display: flex;
     flex-flow: column;
     margin: 20px 0px;
-    background-color: lightgray;
+    background-color: white;
     border-radius: 10px;
     padding: 0px 10px;
+    width: 90%;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
   #gift-list {
@@ -55,7 +51,15 @@
     display: flex;
     padding-left: 0px;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gift-id-tags img {
+    display: block;
+    max-width: 30px;
+    margin-right: 5px;
+    height: 30px;
   }
 
   .gift ul {
@@ -63,33 +67,49 @@
   }
 
   .gift li {
-    background-color: lightblue;
+    background-color: #f941443b;
     border-radius: 10px;
     padding: 5px 10px;
-    margin-top: 5px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gift button {
+    font-size: 10px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
   }
 }
 
 @media all and (min-width: 800px) {
-  .add-new-buttons {
-    background-color: rgb(235, 235, 235);
+  .clear-filter {
     display: flex;
     flex-flow: row;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    padding: 15px 0px;
+    padding-top: 10px;
   }
 
-  .add-new-buttons button {
-    font-size: 15px;
+  .clear-filter button {
+    font-size: 20px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
   }
 
-  .filter-section {
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    background-color: lightgray;
-    padding: 20px 0px;
+  .clear-filter button:hover {
+    background-color: #f94144;
+    color: white;
+    transition-duration: 0.3s;
   }
 
   .gift-section {
@@ -100,10 +120,13 @@
     display: flex;
     flex-flow: column;
     margin: 20px 0px;
-    background-color: lightgray;
+    background-color: white;
     border-radius: 10px;
-    padding: 0px 10px;
-    min-width: 500px;
+    padding: 20px;
+    width: 40%;
+    font-size: 25px;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
   #gift-list {
@@ -124,7 +147,15 @@
     display: flex;
     padding-left: 0px;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .gift-id-tags img {
+    display: block;
+    max-width: 30px;
+    margin-right: 5px;
+    height: 30px;
   }
 
   .gift ul {
@@ -132,9 +163,30 @@
   }
 
   .gift li {
-    background-color: lightblue;
+    background-color: #f941443b;
     border-radius: 10px;
     padding: 5px 10px;
-    margin-top: 5px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.65);
+    box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.65);
+  }
+
+  .gift button {
+    font-size: 20px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+  }
+
+  .gift button:hover {
+    background-color: #f94144;
+    color: white;
+    transition-duration: 0.3s;
   }
 }

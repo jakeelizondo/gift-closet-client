@@ -1,13 +1,4 @@
 @media all and (max-width: 800px) {
-  .add-new-buttons {
-    background-color: rgb(235, 235, 235);
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 15px 0px;
-  }
-
   .gift-section {
     padding: 10px;
     display: flex;
@@ -15,7 +6,7 @@
     justify-content: center;
   }
 
-  .gift {
+  .detailed-gift {
     display: flex;
     flex-flow: column;
     margin: 20px 0px;
@@ -25,54 +16,54 @@
     width: 70%;
   }
 
-  .gift-cost {
+  .detail-gift-cost {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
     align-items: center;
   }
 
-  .gift-cost p {
+  .detail-gift-cost p {
     margin-left: 15px;
   }
 
-  .gift-url {
+  .detail-gift-url {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
     align-items: center;
   }
 
-  .gift-url p {
+  .detail-gift-url p {
     margin-left: 15px;
   }
 
-  .gift-id-name {
+  .detail-gift-id-name {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
   }
 
-  .gift-id-tags {
+  .detail-gift-id-tags {
     display: flex;
     padding-left: 0px;
     flex-flow: row wrap;
     justify-content: space-evenly;
   }
 
-  .gift ul {
+  .detail-gift ul {
     list-style-type: none;
   }
 
-  .gift li {
+  .detail-gift li {
     background-color: lightblue;
     border-radius: 10px;
     padding: 5px 10px;
     margin-top: 5px;
   }
 
-  .gift-buttons {
+  .detail-gift-buttons {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
@@ -80,49 +71,36 @@
 }
 
 @media all and (min-width: 800px) {
-  .add-new-buttons {
-    background-color: rgb(235, 235, 235);
-    display: flex;
-    flex-flow: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 15px 0px;
-  }
-
-  .add-new-buttons button {
-    font-size: 15px;
-  }
-
-  .gift-section {
+  .detail-gift-section {
     padding: 10px;
     display: flex;
     flex-flow: row;
     justify-content: center;
   }
 
-  .gift-cost {
+  .detail-gift-cost {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
     align-items: center;
   }
 
-  .gift-cost p {
+  .detail-gift-cost p {
     margin-left: 15px;
   }
 
-  .gift-url {
+  .detail-gift-url {
     display: flex;
     flex-flow: row;
     justify-content: flex-start;
     align-items: center;
   }
 
-  .gift-url p {
+  .detail-gift-url p {
     margin-left: 15px;
   }
 
-  .gift {
+  .detail-gift {
     display: flex;
     flex-flow: column;
     margin: 20px 0px;
@@ -133,31 +111,31 @@
     max-width: 800px;
   }
 
-  .gift-id-name {
+  .detail-gift-id-name {
     display: flex;
     flex-flow: row;
     justify-content: space-between;
     align-items: center;
   }
 
-  .gift-id-tags {
+  .detail-gift-id-tags {
     display: flex;
     padding-left: 0px;
     flex-flow: row wrap;
     justify-content: space-evenly;
   }
 
-  .gift ul {
+  .detail-gift ul {
     list-style-type: none;
   }
 
-  .gift li {
+  .detail-gift li {
     background-color: lightblue;
     border-radius: 10px;
     padding: 5px 10px;
     margin-top: 5px;
   }
-  .gift-buttons {
+  .detail-gift-buttons {
     display: flex;
     flex-flow: row;
     justify-content: space-around;

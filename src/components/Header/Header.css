@@ -37,13 +37,13 @@
     list-style-type: none;
     padding: 0;
     margin: 10px 0px 0px 0px;
-    width: 50%;
+    width: 75%;
   }
 
   .header-links {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
   }
 }

@@ -29,6 +29,9 @@ export default class Header extends React.Component {
         <Link to={'/my-gifts'}>
           <li>My Gifts</li>
         </Link>
+        <Link to={'/manage-tags'}>
+          <li>My Tags</li>
+        </Link>
         <Link to={''} onClick={this.handleLogoutClick}>
           <li>Logout</li>
         </Link>

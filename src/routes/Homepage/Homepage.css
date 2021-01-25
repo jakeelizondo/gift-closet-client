@@ -85,7 +85,7 @@
   .hero p {
     flex: 2;
     font-size: 25px;
-    max-width: 50%;
+    max-width: 40%;
   }
 
   .hero div img {
