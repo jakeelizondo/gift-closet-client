@@ -4,24 +4,31 @@ import AuthApiService from '../../services/auth-api-service';
 export default class RegisterForm extends React.Component {
   state = { error: null };
 
+  handleFormChange = (event) => {
+    this.setState({ [event.target.id]: event.target.value });
+  };
+
   handleRegisterSubmit = (event) => {
     event.preventDefault();
-    const { first, last, email, username, password } = event.target;
+    const { first, last, email, username, password } = this.state;
     this.setState({ error: null });
 
     AuthApiService.postUser({
-      user_name: username.value,
-      password: password.value,
-      first_name: first.value,
-      last_name: last.value,
-      email: email.value,
+      user_name: username,
+      password: password,
+      first_name: first,
+      last_name: last,
+      email: email,
     })
       .then((user) => {
-        username.value = '';
-        password.value = '';
-        first.value = '';
-        last.value = '';
-        email.value = '';
+        this.setState({
+          username: '',
+          password: '',
+          first: '',
+          last: '',
+          email: '',
+        });
+
         this.props.onRegisterSuccess();
       })
       .catch((response) => {
@@ -30,6 +37,10 @@ export default class RegisterForm extends React.Component {
   };
 
   render() {
+    const passMatch =
+      this.state.password &&
+      this.state.verifyPassword &&
+      this.state.password !== this.state.verifyPassword;
     return (
       <form className="register-form" onSubmit={this.handleRegisterSubmit}>
         {this.state.error && (
@@ -37,19 +48,43 @@ export default class RegisterForm extends React.Component {
         )}
         <div>
           <label htmlFor="first">First Name</label>
-          <input type="text" name="first" id="first" required />
+          <input
+            type="text"
+            name="first"
+            id="first"
+            required
+            onChange={this.handleFormChange}
+          />
         </div>
         <div>
           <label htmlFor="last">Last Name</label>
-          <input type="text" name="last" id="last" required />
+          <input
+            type="text"
+            name="last"
+            id="last"
+            required
+            onChange={this.handleFormChange}
+          />
         </div>
         <div>
           <label htmlFor="email">Email</label>
-          <input type="text" name="email" id="email" required />
+          <input
+            type="text"
+            name="email"
+            id="email"
+            required
+            onChange={this.handleFormChange}
+          />
         </div>
         <div>
           <label htmlFor="username">Username</label>
-          <input type="text" name="username" id="username" required />
+          <input
+            type="text"
+            name="username"
+            id="username"
+            required
+            onChange={this.handleFormChange}
+          />
         </div>
         <div>
           <label htmlFor="password">
@@ -59,10 +94,28 @@ export default class RegisterForm extends React.Component {
               special character)
             </span>
           </label>
-          <input type="text" name="password" id="password" required />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            onChange={this.handleFormChange}
+            required
+          />
         </div>
-
-        <button type="submit">Sign Up</button>
+        <div>
+          <label htmlFor="verifyPassword">Verify Password</label>
+          <input
+            type="password"
+            name="verify-password"
+            id="verifyPassword"
+            onChange={this.handleFormChange}
+            required
+          />
+        </div>
+        {passMatch && <p style={{ color: 'red' }}>Passwords must match</p>}
+        <button type="submit" disabled={passMatch}>
+          Sign Up
+        </button>
       </form>
     );
   }

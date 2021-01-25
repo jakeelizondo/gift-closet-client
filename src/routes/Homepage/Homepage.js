@@ -6,49 +6,25 @@ export default function Homepage() {
   return (
     <div className="homepage">
       <section className="hero-1">
-        <h2>HERO SECTION 1</h2>
+        <h2>Never forget a gift idea again</h2>
         <p>
-          Must go faster. Forget the fat lady! You're obsessed with the fat
-          lady! Drive us out of here! You're a very talented young man, with
-          your own clever thoughts and ideas. Do you need a manager? Jaguar
-          shark! So tell me - does it really exist? This thing comes fully
-          loaded. AM/FM radio, reclining bucket seats, and... power windows.
-          Jaguar shark! So tell me - does it really exist? Yeah, but your
-          scientists were so preoccupied with whether or not they could, they
-          didn't stop to think if they should. Must go faster. Life finds a way.
-          God help us, we're in the hands of engineers. Must go faster... go,
-          go, go, go, go!
+          Always forgetting gift ideas for friends or loved ones? Not anymore.
+          With Gift Closet you can save gift ideas throughout the year so that
+          when holidays or events roll around you'll have a list of gift ideas
+          to choose from.
         </p>
       </section>
       <section className="hero-2">
-        <h2>HERO SECTION 2</h2>
+        <h2>Tag your gifts for easy access</h2>
         <p>
-          Must go faster. Forget the fat lady! You're obsessed with the fat
-          lady! Drive us out of here! You're a very talented young man, with
-          your own clever thoughts and ideas. Do you need a manager? Jaguar
-          shark! So tell me - does it really exist? This thing comes fully
-          loaded. AM/FM radio, reclining bucket seats, and... power windows.
-          Jaguar shark! So tell me - does it really exist? Yeah, but your
-          scientists were so preoccupied with whether or not they could, they
-          didn't stop to think if they should. Must go faster. Life finds a way.
-          God help us, we're in the hands of engineers. Must go faster... go,
-          go, go, go, go!
+          Tag your gifts by individual, event, holiday, anything! Then later,
+          filter your gifts by tag to see only the gift ideas you need for the
+          occasion.
         </p>
       </section>
       <section className="hero-3">
-        <h2>HERO SECTION 3</h2>
-        <p>
-          Must go faster. Forget the fat lady! You're obsessed with the fat
-          lady! Drive us out of here! You're a very talented young man, with
-          your own clever thoughts and ideas. Do you need a manager? Jaguar
-          shark! So tell me - does it really exist? This thing comes fully
-          loaded. AM/FM radio, reclining bucket seats, and... power windows.
-          Jaguar shark! So tell me - does it really exist? Yeah, but your
-          scientists were so preoccupied with whether or not they could, they
-          didn't stop to think if they should. Must go faster. Life finds a way.
-          God help us, we're in the hands of engineers. Must go faster... go,
-          go, go, go, go!
-        </p>
+        <h2>Manage your tags and gifts throughout the year</h2>
+        <p>Add, edit, and delete your gifts and personal tags</p>
       </section>
       <section className="homepage-signup">
         <h2>Sign up today and get the gift of easy giving</h2>

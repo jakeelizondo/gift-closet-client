@@ -10,15 +10,25 @@
   .register-section form {
     display: flex;
     flex-flow: column;
-    margin-top: 30px;
-    background-color: lightgray;
+    text-align: left;
+    margin: 10px 10px 0px 10px;
+    background-color: white;
     padding: 10px;
+    width: 85%;
     border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+  }
+
+  .register-section form div {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
   }
 
   .register-section form input {
-    margin: 0px 0px 10px 0px;
-    width: 95%;
+    margin: 10px 0px 10px 0px;
+    min-width: 90%;
   }
 
   .register-section textarea {
@@ -27,7 +37,13 @@
   }
   .register-section button {
     margin-top: 15px;
+    padding: 10px;
     font-size: 18px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
   }
   .tiny-text {
     font-size: 10px;
@@ -40,21 +56,31 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
   }
 
   .register-section form {
     display: flex;
     flex-flow: column;
-    margin-top: 30px;
-    background-color: lightgray;
-    padding: 10px;
+    text-align: left;
+    margin: 10px 10px 0px 10px;
+    background-color: white;
+    padding: 25px;
+    width: 50%;
     border-radius: 10px;
-    min-width: 60%;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+  }
+
+  .register-section form div {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
   }
 
   .register-section form input {
-    margin: 0px 0px 10px 0px;
-    width: 95%;
+    margin: 10px 0px 10px 0px;
+    min-width: 90%;
   }
 
   .register-section textarea {
@@ -63,15 +89,17 @@
   }
   .register-section button {
     margin-top: 15px;
+    padding: 10px;
     font-size: 18px;
-    max-width: 20%;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
-  .register-form-button {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
+  .register-section button:disabled {
+    background-color: lightgray;
   }
 
   .tiny-text {

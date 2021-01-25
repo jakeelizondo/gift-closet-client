@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import './Header.css';
+import giftClosetIcon from './../../images/003-gift-box.png';
 
 export default class Header extends React.Component {
   handleLogoutClick = () => {
@@ -11,7 +12,7 @@ export default class Header extends React.Component {
 
   renderLoginLink() {
     return (
-      <div>
+      <div className="header-links">
         <Link to={'/login'}>
           <li>Login</li>
         </Link>
@@ -24,7 +25,7 @@ export default class Header extends React.Component {
 
   renderLogoutLink() {
     return (
-      <div>
+      <div className="header-links">
         <Link to={'/my-gifts'}>
           <li>My Gifts</li>
         </Link>
@@ -38,9 +39,13 @@ export default class Header extends React.Component {
   render() {
     return (
       <header className="navbar">
-        <h1>
-          <Link to={'/'}>Gift Closet</Link>
-        </h1>
+        <div className="site-name">
+          <img src={giftClosetIcon} alt={'gift-closet-logo'} />
+          <h1>
+            <Link to={'/'}>Gift Closet</Link>
+          </h1>
+        </div>
+
         <ul>
           {TokenService.hasAuthToken()
             ? this.renderLogoutLink()
