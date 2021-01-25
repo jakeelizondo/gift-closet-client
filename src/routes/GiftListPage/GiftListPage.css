@@ -1,8 +1,4 @@
 @media all and (max-width: 800px) {
-  * {
-    font-family: sans-serif;
-  }
-
   .add-new-buttons {
     background-color: rgb(235, 235, 235);
     display: flex;
@@ -75,10 +71,6 @@
 }
 
 @media all and (min-width: 800px) {
-  * {
-    font-family: sans-serif;
-  }
-
   .add-new-buttons {
     background-color: rgb(235, 235, 235);
     display: flex;

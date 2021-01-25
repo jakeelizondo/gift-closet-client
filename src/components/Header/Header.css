@@ -1,8 +1,4 @@
 @media all and (max-width: 800px) {
-  * {
-    font-family: sans-serif;
-  }
-
   header {
     background-color: #f8f8f8;
     display: flex;
@@ -53,10 +49,6 @@
 }
 
 @media all and (min-width: 800px) {
-  * {
-    font-family: sans-serif;
-  }
-
   header a {
     text-decoration: none;
     color: #312f2e;

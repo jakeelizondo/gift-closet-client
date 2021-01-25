@@ -4,9 +4,8 @@ import './Footer.css';
 export default function Footer() {
   return (
     <footer>
-      <div>
-        <p>Copyright Jake Elizondo 2021 </p>
-      </div>
+      <p>Copyright Jake Elizondo 2021 </p>
+
       <div>
         Icons made by{' '}
         <a href="http://www.freepik.com" title="Freepik">
