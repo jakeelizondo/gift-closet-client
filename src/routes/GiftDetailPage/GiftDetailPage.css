@@ -117,6 +117,14 @@
     box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
+  .detail-gift h3 {
+    font-size: 25px;
+  }
+
+  .detail-gift p {
+    font-size: 20px;
+  }
+
   .detail-gift-cost {
     display: flex;
     flex-flow: row;
@@ -126,6 +134,7 @@
 
   .detail-gift-cost p {
     margin-left: 15px;
+    margin-top: 22px;
   }
 
   .detail-gift-url {
@@ -133,10 +142,6 @@
     flex-flow: row;
     justify-content: flex-start;
     align-items: center;
-  }
-
-  .detail-gift-url p {
-    margin-left: 15px;
   }
 
   .detail-gift-id-name {
@@ -168,6 +173,7 @@
   .detail-gift li {
     background-color: #f941443b;
     border-radius: 10px;
+    font-size: 20px;
     padding: 5px 10px;
     display: flex;
     flex-flow: row;
@@ -185,7 +191,7 @@
   }
 
   .detail-gift button {
-    font-size: 15px;
+    font-size: 20px;
     background-color: #f941443b;
     border: none;
     border-radius: 5px;

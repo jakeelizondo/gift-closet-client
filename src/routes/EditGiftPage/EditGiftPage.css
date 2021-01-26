@@ -2,6 +2,7 @@
   .back-button-bar {
     display: flex;
     flex-flow: row;
+    justify-content: flex-start;
     margin: 10px 0px 0px 10px;
   }
 
@@ -12,27 +13,58 @@
     align-items: center;
   }
 
+  .edit-gift-section img {
+    display: block;
+    max-width: 30px;
+    margin-right: 10px;
+    height: 30px;
+  }
+
   .edit-gift-section form {
     display: flex;
     flex-flow: column;
-    margin-top: 30px;
-    background-color: lightgray;
+    text-align: left;
+    margin: 20px 10px 0px 10px;
+    background-color: white;
     padding: 10px;
+    width: 85%;
     border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
   .edit-gift-section form input {
-    margin: 0px 0px 10px 0px;
-    width: 95%;
+    margin: 10px 0px 10px 0px;
+    min-width: 95%;
   }
 
   .edit-gift-section textarea {
-    margin: 0px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     width: 95%;
   }
+
+  .edit-gift-section select {
+    margin: 10px 0px 10px 0px;
+    width: 95%;
+  }
+
   .edit-gift-section button {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
     margin-top: 15px;
+    padding: 10px 45px 10px 10px;
     font-size: 18px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+  }
+
+  .edit-gift-section button:disabled {
+    background-color: lightgrey;
   }
 }
 
@@ -40,13 +72,8 @@
   .back-button-bar {
     display: flex;
     flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0px 0px 0px;
-  }
-
-  .back-button-bar button {
-    min-width: 60px;
+    justify-content: flex-start;
+    margin: 10px 0px 0px 10px;
   }
 
   .edit-gift-section {
@@ -56,28 +83,67 @@
     align-items: center;
   }
 
+  .edit-gift-section img {
+    display: block;
+    max-width: 30px;
+    margin-right: 10px;
+    height: 30px;
+  }
+
   .edit-gift-section form {
     display: flex;
     flex-flow: column;
-    margin-top: 30px;
-    background-color: lightgray;
+    text-align: left;
+    margin: 20px 10px 0px 10px;
+    background-color: white;
     padding: 10px;
+    width: 50%;
     border-radius: 10px;
-    min-width: 60%;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
   .edit-gift-section form input {
-    margin: 0px 0px 10px 0px;
-    width: 95%;
+    margin: 10px 0px 10px 0px;
+    min-width: 95%;
   }
 
   .edit-gift-section textarea {
-    margin: 0px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     width: 95%;
   }
+
+  .edit-gift-section select {
+    margin: 15px 0px 10px 20px;
+    width: 25%;
+  }
+
   .edit-gift-section button {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
     margin-top: 15px;
-    font-size: 18px;
-    max-width: 20%;
+    padding: 10px 45px 10px 10px;
+    font-size: 20px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+  }
+
+  .edit-gift-section button:disabled {
+    background-color: lightgrey;
+  }
+
+  .edit-gift-section button:disabled:hover {
+    background-color: lightgrey;
+  }
+
+  .edit-gift-section button:hover {
+    background-color: #f94144;
+    color: white;
+    transition-duration: 0.3s;
   }
 }

@@ -13,10 +13,10 @@ export default class EditGiftPage extends React.Component {
     return (
       <React.Fragment>
         <GiftOptionsBar />
+        <div className="back-button-bar">
+          <button onClick={this.props.history.goBack}>Back</button>
+        </div>
         <section className="edit-gift-section">
-          <div className="back-button-bar">
-            <button onClick={this.props.history.goBack}>Back</button>
-          </div>
           <EditGiftForm
             {...this.props}
             onGiftEditSuccess={this.onGiftEditSuccess}

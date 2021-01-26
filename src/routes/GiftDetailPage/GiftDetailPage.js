@@ -69,7 +69,7 @@ export default class GiftDetailPage extends React.Component {
                   {tag.tag_name}
                 </li>
               ) : (
-                <p>No tags yet!</p>
+                <p>No tags found</p>
               )}
             </ul>
           </div>
@@ -90,7 +90,9 @@ export default class GiftDetailPage extends React.Component {
         <div className={'back-button-bar'}>
           <button onClick={this.props.history.goBack}> Back</button>
         </div>
-        {(this.state.gift && this.generateGift()) || <p>Loading gift!</p>}
+        {(this.state.gift && this.generateGift()) || (
+          <h2 style={{ textAlign: 'center' }}>Loading gift!</h2>
+        )}
       </React.Fragment>
     );
   }

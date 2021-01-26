@@ -2,6 +2,7 @@ import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import GiftsApiService from '../../services/gifts-api-service';
 import TagsApiService from '../../services/tags-api-service';
+import editGiftIcon from '../../images/021-gift-9.png';
 
 export default class EditGiftFrom extends React.Component {
   static defaultProps = {
@@ -77,7 +78,7 @@ export default class EditGiftFrom extends React.Component {
   render() {
     return (
       <form id="edit-gift" onSubmit={(event) => this.handleEditSubmit(event)}>
-        <div>
+        <div className="stack">
           <label htmlFor="gift-name">Gift Name:</label>
           <input
             value={this.state.giftName}
@@ -91,7 +92,7 @@ export default class EditGiftFrom extends React.Component {
             <p style={{ color: 'red' }}>Gift name is required</p>
           )}
         </div>
-        <div>
+        <div className="stack">
           <label htmlFor="gift-cost">Gift Cost: $</label>
           <input
             type="float"
@@ -101,7 +102,7 @@ export default class EditGiftFrom extends React.Component {
             onChange={(event) => this.handleFormChange(event)}
           />
         </div>
-        <div>
+        <div className="stack">
           <label htmlFor="gift-notes">Notes/Description:</label>
           <textarea
             name="gift-notes"
@@ -112,7 +113,7 @@ export default class EditGiftFrom extends React.Component {
             onChange={(event) => this.handleFormChange(event)}
           ></textarea>
         </div>
-        <div>
+        <div className="stack">
           <label htmlFor="gift-url">URL:</label>
           <input
             type="gift-url"
@@ -139,6 +140,7 @@ export default class EditGiftFrom extends React.Component {
           type="submit-new-gift"
           disabled={!this.state.giftName || this.state.giftName === ''}
         >
+          <img src={editGiftIcon} alt={'edit-gift-icon'} />
           Submit
         </button>
       </form>
