@@ -1,6 +1,7 @@
 import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import GiftsApiService from '../../services/gifts-api-service';
+import boxIcon from '../../images/019-box.png';
 
 export default class AddGiftFrom extends React.Component {
   static defaultProps = {
@@ -56,8 +57,8 @@ export default class AddGiftFrom extends React.Component {
     console.log(this.state);
     return (
       <form id="add-gift" onSubmit={(event) => this.handleFormSubmit(event)}>
-        <div>
-          <label htmlFor="gift-name">Gift Name:</label>
+        <div className="stack">
+          <label htmlFor="gift-name">Gift Name (required):</label>
           <input
             placeholder="Gift Name Here"
             type="text"
@@ -70,17 +71,17 @@ export default class AddGiftFrom extends React.Component {
             <p style={{ color: 'red' }}>Gift name is required</p>
           )}
         </div>
-        <div>
+        <div className="stack">
           <label htmlFor="gift-cost">Gift Cost: $</label>
           <input
             type="float"
             name="gift-cost"
             id="giftCost"
-            placeholder="34.99"
+            placeholder="00.00"
             onChange={(event) => this.handleFormChange(event)}
           />
         </div>
-        <div>
+        <div className="stack">
           <label htmlFor="gift-notes">Notes/Description:</label>
           <textarea
             name="gift-notes"
@@ -90,7 +91,7 @@ export default class AddGiftFrom extends React.Component {
             onChange={(event) => this.handleFormChange(event)}
           ></textarea>
         </div>
-        <div>
+        <div className="stack">
           <label htmlFor="gift-url">URL:</label>
           <input
             type="gift-url"
@@ -113,9 +114,10 @@ export default class AddGiftFrom extends React.Component {
         </div>
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
         <button
-          type="submit-new-gift"
+          type="submit"
           disabled={!this.state.giftName || this.state.giftName === ''}
         >
+          <img src={boxIcon} alt={'gift-box-icon'} />
           Add Gift
         </button>
       </form>

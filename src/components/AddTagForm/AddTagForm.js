@@ -1,5 +1,6 @@
 import React from 'react';
 import TagsApiService from '../../services/tags-api-service';
+import tagIcon from '../../images/012-bookmark.png';
 
 export default class AddTagFrom extends React.Component {
   static defaultProps = {
@@ -37,9 +38,9 @@ export default class AddTagFrom extends React.Component {
     return (
       <form id="add-tag" onSubmit={(event) => this.handleFormSubmit(event)}>
         <div>
-          <label htmlFor="tag-name">Tag Name:</label>
+          <label htmlFor="tag-name">Tag Name (required):</label>
           <input
-            placeholder="super cool tag name"
+            placeholder=" Your tag name here"
             type="text"
             name="tag-name"
             id="tagName"
@@ -53,9 +54,10 @@ export default class AddTagFrom extends React.Component {
 
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
         <button
-          type="submit-new-tag"
+          type="submit"
           disabled={!this.state.tagName || this.state.tagName === ''}
         >
+          <img src={tagIcon} alt={'tag-icon'} />
           Add tag
         </button>
       </form>

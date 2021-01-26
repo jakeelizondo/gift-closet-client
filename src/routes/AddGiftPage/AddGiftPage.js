@@ -21,10 +21,10 @@ export default class AddGiftPage extends React.Component {
     return (
       <React.Fragment>
         <GiftOptionsBar />
+        <div className="back-button-bar">
+          <button onClick={this.props.history.goBack}>Back</button>
+        </div>
         <section className="add-new-gift-section">
-          <div className="back-button-bar">
-            <button onClick={this.props.history.goBack}>Back</button>
-          </div>
           <AddGiftForm onGiftPostSuccess={this.onGiftPostSuccess} />
         </section>
       </React.Fragment>

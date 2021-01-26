@@ -1,8 +1,13 @@
 @media all and (max-width: 800px) {
-  .back-button-bar {
-    display: flex;
-    flex-flow: row;
-    margin: 10px 0px 0px 10px;
+  .back-button-bar button {
+    margin: 10px 10px 0px 10px;
+    font-size: 15px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
   }
 
   .add-new-gift-section {
@@ -12,41 +17,77 @@
     align-items: center;
   }
 
+  .add-new-gift-section img {
+    display: block;
+    max-width: 30px;
+    margin-right: 10px;
+    height: 30px;
+  }
+
   .add-new-gift-section form {
     display: flex;
     flex-flow: column;
-    margin-top: 30px;
-    background-color: lightgray;
+    text-align: left;
+    margin: 20px 10px 0px 10px;
+    background-color: white;
     padding: 10px;
+    width: 85%;
     border-radius: 10px;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
   .add-new-gift-section form input {
-    margin: 0px 0px 10px 0px;
-    width: 95%;
+    margin: 10px 0px 10px 0px;
+    min-width: 95%;
   }
 
   .add-new-gift-section textarea {
-    margin: 0px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     width: 95%;
   }
+
+  .add-new-gift-section select {
+    margin: 10px 0px 10px 0px;
+    width: 95%;
+  }
+
   .add-new-gift-section button {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
     margin-top: 15px;
+    padding: 10px 45px 10px 10px;
     font-size: 18px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+  }
+
+  .add-new-gift-section button:disabled {
+    background-color: lightgrey;
   }
 }
 
 @media all and (min-width: 800px) {
-  .back-button-bar {
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0px 0px 0px;
+  .back-button-bar button {
+    margin: 10px 10px 0px 30px;
+    font-size: 15px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
   }
 
-  .back-button-bar button {
-    min-width: 60px;
+  .back-button-bar button:hover {
+    background-color: #f94144;
+    color: white;
+    transition-duration: 0.3s;
   }
 
   .add-new-gift-section {
@@ -59,25 +100,76 @@
   .add-new-gift-section form {
     display: flex;
     flex-flow: column;
-    margin-top: 30px;
-    background-color: lightgray;
+    text-align: left;
+    margin: 20px 10px 0px 10px;
+    background-color: white;
     padding: 10px;
+    width: 85%;
     border-radius: 10px;
-    min-width: 60%;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+  }
+
+  .add-new-gift-section img {
+    display: block;
+    max-width: 30px;
+    margin-right: 10px;
+    height: 30px;
+  }
+
+  .stack {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .add-gift-add-tag {
+    display: flex;
+    flex-flow: row;
+    justify-content: flex-start;
+    align-items: center;
   }
 
   .add-new-gift-section form input {
-    margin: 0px 0px 10px 0px;
-    width: 95%;
+    margin: 10px 0px 10px 0px;
+    min-width: 95%;
   }
 
   .add-new-gift-section textarea {
-    margin: 0px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     width: 95%;
   }
+
+  .add-new-gift-section select {
+    margin: 15px 0px 10px 20px;
+    width: 25%;
+  }
+
   .add-new-gift-section button {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
     margin-top: 15px;
-    font-size: 18px;
-    max-width: 20%;
+    padding: 10px 45px 10px 10px;
+    font-size: 20px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 7px 14px -5px rgba(0, 0, 0, 0.42);
+  }
+
+  .add-new-gift-section button:disabled {
+    background-color: lightgrey;
+  }
+
+  .add-new-gift-section button:disabled:hover {
+    background-color: lightgrey;
+  }
+
+  .add-new-gift-section button:hover {
+    background-color: #f94144;
+    color: white;
+    transition-duration: 0.3s;
   }
 }
