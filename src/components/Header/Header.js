@@ -10,6 +10,14 @@ export default class Header extends React.Component {
     this.props.history.push('/');
   };
 
+  getStyle = () => {
+    if (this.props.location.pathname === '/') {
+      return { backgroundColor: 'white' };
+    } else {
+      return { backgroundColor: '#fafafa' };
+    }
+  };
+
   renderLoginLink() {
     return (
       <div className="header-links">
@@ -41,7 +49,7 @@ export default class Header extends React.Component {
 
   render() {
     return (
-      <header className="navbar">
+      <header className="navbar" style={this.getStyle()}>
         <div className="site-name">
           <img src={giftClosetIcon} alt={'gift-closet-logo'} />
           <h1>
