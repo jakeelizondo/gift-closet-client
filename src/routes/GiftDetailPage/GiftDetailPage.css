@@ -1,19 +1,22 @@
 @media all and (max-width: 800px) {
-  .gift-section {
+  .detail-gift-section {
     padding: 10px;
     display: flex;
     flex-flow: row;
     justify-content: center;
+    align-items: center;
   }
 
-  .detailed-gift {
+  .detail-gift {
     display: flex;
     flex-flow: column;
-    margin: 20px 0px;
-    background-color: lightgray;
+    margin: 10px 0px;
+    background-color: white;
     border-radius: 10px;
-    padding: 0px 10px 10px 10px;
-    width: 70%;
+    padding: 10px 20px;
+    width: 80%;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
   .detail-gift-cost {
@@ -52,21 +55,44 @@
     justify-content: space-evenly;
   }
 
+  .detail-gift-id-tags img {
+    display: block;
+    max-width: 30px;
+    margin-right: 5px;
+    height: 30px;
+  }
+
   .detail-gift ul {
     list-style-type: none;
   }
 
   .detail-gift li {
-    background-color: lightblue;
+    background-color: #f941443b;
     border-radius: 10px;
     padding: 5px 10px;
-    margin-top: 5px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
   }
 
   .detail-gift-buttons {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
+    margin: 30px 0px;
+  }
+
+  .detail-gift button {
+    font-size: 15px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
   }
 }
 
@@ -76,6 +102,19 @@
     display: flex;
     flex-flow: row;
     justify-content: center;
+    align-items: center;
+  }
+
+  .detail-gift {
+    display: flex;
+    flex-flow: column;
+    margin: 10px 0px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    width: 50%;
+    -webkit-box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 14px -5px rgba(0, 0, 0, 0.42);
   }
 
   .detail-gift-cost {
@@ -100,17 +139,6 @@
     margin-left: 15px;
   }
 
-  .detail-gift {
-    display: flex;
-    flex-flow: column;
-    margin: 20px 0px;
-    background-color: lightgray;
-    border-radius: 10px;
-    padding: 0px 10px 10px 10px;
-    width: 70%;
-    max-width: 800px;
-  }
-
   .detail-gift-id-name {
     display: flex;
     flex-flow: row;
@@ -121,8 +149,16 @@
   .detail-gift-id-tags {
     display: flex;
     padding-left: 0px;
+    margin-top: 0;
     flex-flow: row wrap;
     justify-content: space-evenly;
+  }
+
+  .detail-gift-id-tags img {
+    display: block;
+    max-width: 30px;
+    margin-right: 5px;
+    height: 30px;
   }
 
   .detail-gift ul {
@@ -130,14 +166,37 @@
   }
 
   .detail-gift li {
-    background-color: lightblue;
+    background-color: #f941443b;
     border-radius: 10px;
     padding: 5px 10px;
-    margin-top: 5px;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
   }
+
   .detail-gift-buttons {
     display: flex;
     flex-flow: row;
     justify-content: space-around;
+    margin: 30px 0px;
+  }
+
+  .detail-gift button {
+    font-size: 15px;
+    background-color: #f941443b;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    -webkit-box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+    box-shadow: 0px 5px 10px -5px rgba(0, 0, 0, 0.41);
+  }
+
+  .detail-gift button:hover {
+    background-color: #f94144;
+    color: white;
+    transition-duration: 0.3s;
   }
 }

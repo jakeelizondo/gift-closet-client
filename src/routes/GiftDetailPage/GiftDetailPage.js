@@ -4,6 +4,7 @@ import GiftOptionsBar from '../../components/GiftOptionsBar/GiftOptionsBar';
 import GiftsApiService from '../../services/gifts-api-service';
 import TagsApiService from '../../services/tags-api-service';
 import './GiftDetailPage.css';
+import tagIcon from '../../images/012-bookmark.png';
 
 export default class GiftDetailPage extends React.Component {
   state = { error: false };
@@ -35,7 +36,7 @@ export default class GiftDetailPage extends React.Component {
     const tag = this.state.tag || null;
     return (
       <section className="detail-gift-section">
-        <div className="gift">
+        <div className="detail-gift">
           <div className="detail-gift-id-name">
             <h3>{gift.gift_name}</h3>
           </div>
@@ -62,7 +63,14 @@ export default class GiftDetailPage extends React.Component {
           <div>
             <h3>Tag:</h3>
             <ul className="detail-gift-id-tags">
-              {tag ? <li>{tag.tag_name}</li> : <p>No tags yet!</p>}
+              {tag ? (
+                <li>
+                  <img src={tagIcon} alt={'tag-icon'} />
+                  {tag.tag_name}
+                </li>
+              ) : (
+                <p>No tags yet!</p>
+              )}
             </ul>
           </div>
           <div className="detail-gift-buttons">
@@ -79,7 +87,7 @@ export default class GiftDetailPage extends React.Component {
     return (
       <React.Fragment>
         <GiftOptionsBar />
-        <div>
+        <div className={'back-button-bar'}>
           <button onClick={this.props.history.goBack}> Back</button>
         </div>
         {(this.state.gift && this.generateGift()) || <p>Loading gift!</p>}
