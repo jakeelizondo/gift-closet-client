@@ -4,6 +4,7 @@ import TagsApiService from '../../services/tags-api-service';
 import { Link } from 'react-router-dom';
 import './TagListPage.css';
 import GiftOptionsBar from '../../components/GiftOptionsBar/GiftOptionsBar';
+import giftTagIcon from '../../images/012-bookmark.png';
 
 export default class TagsListPage extends React.Component {
   static contextType = AppContext;
@@ -26,6 +27,7 @@ export default class TagsListPage extends React.Component {
       return (
         <div className="tag" id={tag.id} key={tag.id}>
           <div className="tag-id-name">
+            <img src={giftTagIcon} alt={'gift-tag-icon'} />
             <h3>{tag.tag_name}</h3>
           </div>
           <div className="tag-buttons">
