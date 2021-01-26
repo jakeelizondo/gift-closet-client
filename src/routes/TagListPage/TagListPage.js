@@ -8,6 +8,7 @@ import giftTagIcon from '../../images/012-bookmark.png';
 
 export default class TagsListPage extends React.Component {
   static contextType = AppContext;
+  state = { error: null };
   componentDidMount() {
     this.setState({ loading: true });
     TagsApiService.getAllTags()
@@ -56,6 +57,7 @@ export default class TagsListPage extends React.Component {
   };
 
   render() {
+    console.log();
     return (
       <React.Fragment>
         <GiftOptionsBar />
@@ -63,7 +65,7 @@ export default class TagsListPage extends React.Component {
           Back
         </button>
         <div className="warnings">
-          {this.state.loading && <p>Loading gifts....</p>}
+          {this.state.loading && <p>Loading tags....</p>}
           {this.state.empty && <p>Looks like you need to add some tags!</p>}
         </div>
         <section className="tag-section">
