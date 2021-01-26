@@ -4,7 +4,7 @@ import './Footer.css';
 export default function Footer() {
   return (
     <footer>
-      <p>Copyright Jake Elizondo 2021 </p>
+      <p>Copyright Jake Elizondo 2021 | </p>
 
       <div>
         Icons made by{' '}

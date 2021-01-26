@@ -8,7 +8,7 @@ import giftListIcon from '../../images/014-list.png';
 export default function Homepage() {
   return (
     <div className="homepage">
-      <section className="hero white-background">
+      <section className="hero white-background hero-1">
         <h2>Gift. Smarter!</h2>
         <div>
           <img src={giftMemoryIcon} alt={'gift-memory-icon'} />
