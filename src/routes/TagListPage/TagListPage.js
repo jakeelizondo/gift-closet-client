@@ -9,9 +9,19 @@ import giftTagIcon from '../../images/012-bookmark.png';
 export default class TagsListPage extends React.Component {
   static contextType = AppContext;
   componentDidMount() {
-    TagsApiService.getAllTags().then((tags) => {
-      this.context.setTags(tags);
-    });
+    this.setState({ loading: true });
+    TagsApiService.getAllTags()
+      .then((tags) => {
+        this.context.setTags(tags);
+        if (tags.length < 1) {
+          this.setState({ empty: true });
+        } else {
+          this.setState({ empty: false });
+        }
+      })
+      .then(() => {
+        this.setState({ loading: false });
+      });
   }
 
   handleDeleteTag = (e) => {
@@ -52,9 +62,10 @@ export default class TagsListPage extends React.Component {
         <button className="back-button" onClick={this.props.history.goBack}>
           Back
         </button>
-        {this.context.tags.length < 1 && (
-          <p>Looks like you need to add some tags!</p>
-        )}
+        <div className="warnings">
+          {this.state.loading && <p>Loading gifts....</p>}
+          {this.state.empty && <p>Looks like you need to add some tags!</p>}
+        </div>
         <section className="tag-section">
           <div id="tag-list">{this.generateTags()}</div>
         </section>
