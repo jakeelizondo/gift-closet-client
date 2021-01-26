@@ -1,6 +1,7 @@
 import React from 'react';
 import AppContext from '../../contexts/AppContext';
 import TagsApiService from '../../services/tags-api-service';
+import editTagIcon from '../../images/050-tag.png';
 
 export default class EditTagFrom extends React.Component {
   static defaultProps = {
@@ -64,9 +65,10 @@ export default class EditTagFrom extends React.Component {
 
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
         <button
-          type="submit-new-tag"
+          type="submit"
           disabled={!this.state.tagName || this.state.tagName === ''}
         >
+          <img src={editTagIcon} alt={'edit-tag-icon'} />
           Submit
         </button>
       </form>

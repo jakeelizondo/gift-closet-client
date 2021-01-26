@@ -10,12 +10,17 @@ export default class EditTagPage extends React.Component {
 
   render() {
     return (
-      <section className="edit-tag-section">
+      <React.Fragment>
         <div className="back-button-bar">
           <button onClick={this.props.history.goBack}>Back</button>
         </div>
-        <EditTagForm {...this.props} onTagEditSuccess={this.onTagEditSuccess} />
-      </section>
+        <section className="edit-tag-section">
+          <EditTagForm
+            {...this.props}
+            onTagEditSuccess={this.onTagEditSuccess}
+          />
+        </section>
+      </React.Fragment>
     );
   }
 }
