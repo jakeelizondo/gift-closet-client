@@ -14,9 +14,15 @@ export default class GiftListPage extends React.Component {
   state = { error: false, filter: false, filterTag: '' };
 
   componentDidMount() {
+    this.setState({ loading: true });
     GiftsApiService.getAllUserGifts()
       .then((gifts) => {
         this.context.setGifts(gifts);
+        if (gifts.length < 1) {
+          this.setState({ empty: true });
+        } else {
+          this.setState({ empty: false });
+        }
       })
       .catch((error) => {
         this.setState({ error });
@@ -25,6 +31,9 @@ export default class GiftListPage extends React.Component {
     TagsApiService.getAllTags()
       .then((tags) => {
         this.context.setTags(tags);
+      })
+      .then(() => {
+        this.setState({ loading: false });
       })
       .catch((error) => {
         this.setState({ error });
@@ -62,15 +71,9 @@ export default class GiftListPage extends React.Component {
         (tag) => tag.id === Number(this.state.filterTag)
       )[0] || {};
 
-    // console.log('userSelectedTag', userSelectedTag);
-
     const filteredGifts = this.context.gifts.filter((gift) => {
-      // console.log(gift);
-      // console.log(userSelectedTag);
       return gift.tag_id === userSelectedTag.id;
     });
-
-    console.log('filtered gifts', filteredGifts);
 
     const userGifts = filteredGifts.map((gift) => {
       return (
@@ -131,10 +134,11 @@ export default class GiftListPage extends React.Component {
             <button onClick={this.handleFilterClear}>Clear Filter</button>
           </div>
         )}
+        <div className="warnings">
+          {this.state.loading && <p>Loading gifts....</p>}
+          {this.state.empty && <p>Looks like you need to add some gifts!</p>}
+        </div>
         <section className="gift-section">
-          {this.context.gifts.length < 1 && (
-            <p>Looks like you need to add some gifts!</p>
-          )}
           <div id="gift-list">
             {(this.state.filter && this.generateFilteredGifts()) ||
               this.generateGifts()}
