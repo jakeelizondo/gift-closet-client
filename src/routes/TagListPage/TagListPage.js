@@ -57,7 +57,6 @@ export default class TagsListPage extends React.Component {
   };
 
   render() {
-    console.log();
     return (
       <React.Fragment>
         <GiftOptionsBar />

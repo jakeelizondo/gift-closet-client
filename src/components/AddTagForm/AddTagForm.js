@@ -31,7 +31,7 @@ export default class AddTagFrom extends React.Component {
         }
       })
       .catch((error) => {
-        console.log(error);
+        this.setState({ error });
       });
   };
 

@@ -50,7 +50,9 @@ export default class AddGiftFrom extends React.Component {
         }
       })
       .catch((error) => {
-        console.log(error);
+        this.setState({
+          error,
+        });
       });
   };
 
