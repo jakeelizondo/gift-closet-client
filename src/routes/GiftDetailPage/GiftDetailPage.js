@@ -51,7 +51,11 @@ export default class GiftDetailPage extends React.Component {
               <div className="detail-gift-url">
                 <h3>URL: </h3>
                 <p>
-                  <a href={gift.gift_url}>{gift.gift_url}</a>
+                  {gift.gift_url.startsWith('https://www.') ? (
+                    <a href={gift.gift_url}>{gift.gift_url}</a>
+                  ) : (
+                    <p>{gift.gift_url}</p>
+                  )}
                 </p>
               </div>
             )}

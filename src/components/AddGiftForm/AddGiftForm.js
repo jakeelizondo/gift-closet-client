@@ -40,7 +40,8 @@ export default class AddGiftFrom extends React.Component {
     GiftsApiService.addGift(newGift)
       .then((gift) => {
         if (gift) {
-          this.props.onGiftPostSuccess();
+          this.setState({ success: true });
+          setTimeout(this.props.onGiftPostSuccess, 1500);
         } else {
           this.setState({
             error:
@@ -54,7 +55,6 @@ export default class AddGiftFrom extends React.Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <form id="add-gift" onSubmit={(event) => this.handleFormSubmit(event)}>
         <div className="stack">
@@ -74,7 +74,8 @@ export default class AddGiftFrom extends React.Component {
         <div className="stack">
           <label htmlFor="gift-cost">Gift Cost: $</label>
           <input
-            type="float"
+            type="number"
+            step=".01"
             name="gift-cost"
             id="giftCost"
             placeholder="00.00"
@@ -97,7 +98,7 @@ export default class AddGiftFrom extends React.Component {
             type="gift-url"
             name="gift-url"
             id="giftUrl"
-            placeholder="giftwebsite.com/awesome-gift"
+            placeholder="https://"
             onChange={(event) => this.handleFormChange(event)}
           />
         </div>
@@ -112,6 +113,11 @@ export default class AddGiftFrom extends React.Component {
             {this.generateTagOptions()}
           </select>
         </div>
+        {this.state.success && (
+          <p style={{ color: 'green', textAlign: 'center', fontSize: '20px' }}>
+            Your gift was created!
+          </p>
+        )}
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
         <button
           type="submit"

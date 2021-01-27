@@ -6,7 +6,7 @@ import './EditGiftPage.css';
 export default class EditGiftPage extends React.Component {
   state = { error: true };
   onGiftEditSuccess = () => {
-    this.props.history.push('/my-gifts');
+    this.props.history.goBack();
   };
 
   render() {

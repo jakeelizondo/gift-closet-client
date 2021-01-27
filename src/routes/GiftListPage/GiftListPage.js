@@ -11,7 +11,7 @@ import giftTagIcon from '../../images/012-bookmark.png';
 export default class GiftListPage extends React.Component {
   static contextType = AppContext;
 
-  state = { error: false, filter: false, filterTag: '' };
+  state = { error: false, filter: false, filterTag: '', giftCount: null };
 
   componentDidMount() {
     this.setState({ loading: true });
@@ -87,14 +87,19 @@ export default class GiftListPage extends React.Component {
           <div>
             <h4>Tag:</h4>
             <ul className="gift-id-tags">
-              {this.getTagNameForGift(gift.tag_id)}
+              {gift.tag_id ? (
+                this.getTagNameForGift(gift.tag_id)
+              ) : (
+                <Link to={`/edit-gift/${gift.id}`}>
+                  <button>Add Tag</button>
+                </Link>
+              )}
             </ul>
           </div>
         </div>
       );
     });
 
-    console.log(userGifts);
     return userGifts;
   };
 
@@ -111,7 +116,13 @@ export default class GiftListPage extends React.Component {
           <div>
             <h4>Tag:</h4>
             <ul className="gift-id-tags">
-              {this.getTagNameForGift(gift.tag_id)}
+              {gift.tag_id ? (
+                this.getTagNameForGift(gift.tag_id)
+              ) : (
+                <Link to={`/edit-gift/${gift.id}`}>
+                  <button>Add Tag</button>
+                </Link>
+              )}
             </ul>
           </div>
         </div>

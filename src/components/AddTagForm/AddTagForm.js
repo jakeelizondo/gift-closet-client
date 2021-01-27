@@ -52,7 +52,11 @@ export default class AddTagFrom extends React.Component {
             <p style={{ color: 'red' }}>Tag name is required</p>
           )}
         </div>
-        {this.state.success && <p>Your tag was created!</p>}
+        {this.state.success && (
+          <p style={{ color: 'green', textAlign: 'center', fontSize: '20px' }}>
+            Your tag was created!
+          </p>
+        )}
 
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
         <button

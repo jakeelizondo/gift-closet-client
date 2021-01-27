@@ -95,7 +95,8 @@ export default class EditGiftFrom extends React.Component {
         <div className="stack">
           <label htmlFor="gift-cost">Gift Cost: $</label>
           <input
-            type="float"
+            type="number"
+            step=".01"
             name="gift-cost"
             id="giftCost"
             value={this.state.giftCost}
@@ -119,7 +120,7 @@ export default class EditGiftFrom extends React.Component {
             type="gift-url"
             name="gift-url"
             id="giftUrl"
-            placeholder="giftwebsite.com/awesome-gift"
+            placeholder="https://"
             value={this.state.giftUrl}
             onChange={(event) => this.handleFormChange(event)}
           />
@@ -132,6 +133,7 @@ export default class EditGiftFrom extends React.Component {
             onChange={(event) => this.handleFormChange(event)}
           >
             <option value="">No change</option>
+            <option value="delete">NO TAG</option>
             {this.generateTagOptions()}
           </select>
         </div>
