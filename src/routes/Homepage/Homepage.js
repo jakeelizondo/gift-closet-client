@@ -23,7 +23,7 @@ export default function Homepage() {
           </p>
         </div>
       </section>
-      <section className="hero" style={{ 'background-color': '#f941443b' }}>
+      <section className="hero" style={{ backgroundColor: '#f941443b' }}>
         <div className="hero-content">
           <h2>Tag your gifts for easy access</h2>
           <p>
