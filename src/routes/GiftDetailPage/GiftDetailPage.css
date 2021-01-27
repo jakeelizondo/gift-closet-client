@@ -144,6 +144,10 @@
     align-items: center;
   }
 
+  .detail-gift-url p {
+    margin-left: 10px;
+  }
+
   .detail-gift-id-name {
     display: flex;
     flex-flow: row;

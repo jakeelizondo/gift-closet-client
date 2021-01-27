@@ -49,8 +49,10 @@ export default class GiftDetailPage extends React.Component {
             )}
             {gift.gift_url && (
               <div className="detail-gift-url">
-                <h3>URL:</h3>
-                <p>{gift.gift_url}</p>
+                <h3>URL: </h3>
+                <p>
+                  <a href={gift.gift_url}>{gift.gift_url}</a>
+                </p>
               </div>
             )}
             {gift.gift_description && (
