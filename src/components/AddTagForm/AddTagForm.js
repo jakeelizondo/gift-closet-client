@@ -6,7 +6,7 @@ export default class AddTagFrom extends React.Component {
   static defaultProps = {
     onTagPostSuccess: () => {},
   };
-  state = { error: false };
+  state = { error: false, success: false };
 
   handleFormChange = (event) => {
     this.setState({ touched: true });
@@ -21,7 +21,8 @@ export default class AddTagFrom extends React.Component {
     TagsApiService.addTag(newTag)
       .then((tag) => {
         if (tag) {
-          this.props.onTagPostSuccess();
+          this.setState({ success: true });
+          setTimeout(this.props.onTagPostSuccess, 1500);
         } else {
           this.setState({
             error:
@@ -51,6 +52,7 @@ export default class AddTagFrom extends React.Component {
             <p style={{ color: 'red' }}>Tag name is required</p>
           )}
         </div>
+        {this.state.success && <p>Your tag was created!</p>}
 
         {this.state.error && <p style={{ color: 'red' }}>{this.state.error}</p>}
         <button
