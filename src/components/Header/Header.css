@@ -56,6 +56,11 @@
     padding: 0;
   }
 
+  .active {
+    background-color: #f941442a;
+    border-radius: 5px;
+  }
+
   .header-links li:hover {
     background-color: #f941442a;
     border-radius: 5px;

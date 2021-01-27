@@ -22,10 +22,22 @@ export default class Header extends React.Component {
     return (
       <div className="header-links">
         <Link to={'/login'}>
-          <li>Login</li>
+          <li
+            className={
+              this.props.location.pathname === '/login' ? 'active' : null
+            }
+          >
+            Login
+          </li>
         </Link>
         <Link to={'/register'}>
-          <li>Register</li>
+          <li
+            className={
+              this.props.location.pathname === '/register' ? 'active' : null
+            }
+          >
+            Register
+          </li>
         </Link>
       </div>
     );
@@ -35,10 +47,22 @@ export default class Header extends React.Component {
     return (
       <div className="header-links">
         <Link to={'/my-gifts'}>
-          <li>My Gifts</li>
+          <li
+            className={
+              this.props.location.pathname === '/my-gifts' ? 'active' : null
+            }
+          >
+            My Gifts
+          </li>
         </Link>
         <Link to={'/manage-tags'}>
-          <li>My Tags</li>
+          <li
+            className={
+              this.props.location.pathname === '/manage-tags' ? 'active' : null
+            }
+          >
+            My Tags
+          </li>
         </Link>
         <Link to={''} onClick={this.handleLogoutClick}>
           <li>Logout</li>
@@ -53,7 +77,9 @@ export default class Header extends React.Component {
         <div className="site-name">
           <img src={giftClosetIcon} alt={'gift-closet-logo'} />
           <h1>
-            <Link to={'/'}>Gift Closet</Link>
+            <Link to={TokenService.hasAuthToken() ? '/my-gifts' : '/'}>
+              Gift Closet
+            </Link>
           </h1>
         </div>
 

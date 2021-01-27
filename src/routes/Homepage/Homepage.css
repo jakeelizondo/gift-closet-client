@@ -126,7 +126,7 @@
     height: auto;
   }
 
-  section {
+  .hero {
     display: flex;
     flex-flow: row;
     justify-content: center;
