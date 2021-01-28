@@ -59,6 +59,14 @@ export default function Homepage() {
           <Link to={'/register'}>
             <button>Sign me up!</button>
           </Link>
+
+          <h3>
+            Want to try it out? <br />
+            Login as a demo user! (info on login page):
+          </h3>
+          <Link to={'/login'}>
+            <button>Login</button>
+          </Link>
         </div>
       </section>
     </div>
