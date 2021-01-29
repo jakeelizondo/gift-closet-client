@@ -4,7 +4,7 @@ View the live application at: https://gift-closet.vercel.app/
 
 ## Application screenshot
 
-![gift closet screenshot](./src/images/gift-closet-screenshot.png)
+![gift closet screenshot](https://github.com/jakeelizondo/gift-closet-client/blob/master/src/images/gift-closet-screenshot.PNG)
 
 ### Application Summary
 
